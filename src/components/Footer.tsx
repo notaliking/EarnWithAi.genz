@@ -23,7 +23,7 @@ export const Footer = () => (
       <a href="#" className="p-3 glass rounded-full text-gray-400 hover:text-neon-pink transition-colors"><Send size={20} /></a>
     </div>
     <p className="text-gray-500 text-sm">
-      © {new Date().getFullYear()} {SITE_CONFIG.title} | <a href="#" className="underline hover:text-white transition-colors">Privacy</a> | Made with <Heart size={12} className="inline text-neon-pink" /> & AI
+      © {new Date().getFullYear()} {SITE_CONFIG.title} | <a href="#" className="underline hover:text-white transition-colors">Privacy</a> | <a href="/sitemap.xml" className="underline hover:text-white transition-colors">Sitemap</a> | Made with <Heart size={12} className="inline text-neon-pink" /> & AI
     </p>
   </footer>
 );
