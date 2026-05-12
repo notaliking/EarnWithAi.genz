@@ -117,13 +117,13 @@ export const AIHub = () => {
   };
 
   return (
-    <main className="pt-24 md:pt-32 px-4 md:px-10 pb-4 md:pb-10 container mx-auto h-[calc(100dvh-0px)] md:h-[calc(100vh-80px)] flex flex-col overflow-hidden">
-      <div className="mb-4 md:mb-8 shrink-0">
-        <h1 className="text-3xl md:text-7xl font-heading font-black uppercase tracking-tighter mb-2 md:mb-4 text-white">
+    <main className="pt-20 md:pt-24 px-4 md:px-6 pb-4 md:pb-6 w-full max-w-[1800px] mx-auto h-[calc(100dvh-0px)] md:h-[calc(100vh-20px)] flex flex-col overflow-hidden">
+      <div className="mb-2 md:mb-4 shrink-0 md:px-4">
+        <h1 className="text-2xl md:text-5xl font-heading font-black uppercase tracking-tighter text-white">
           AI <span className="neon-text">Command</span> Center 🛸
         </h1>
-        <p className="text-gray-400 max-w-2xl font-body text-xs md:text-base">
-          The ultimate suite of Google Gemini tools live on your dashboard. Chat, generate, and visualize your hustle.
+        <p className="text-gray-400 max-w-3xl font-body text-[10px] md:text-xs">
+          The ultimate suite of Google Gemini tools live on your dashboard.
         </p>
       </div>
 
