@@ -11,64 +11,400 @@ export const SITE_CONFIG: SiteConfig = {
 
 export const TOOLS: Tool[] = [
   // --- IMAGE GENERATION ---
-  { id: 'midjourney', name: 'Midjourney', category: 'Image Gen', description: 'The gold standard for artistic AI images. Best for high-end aesthetics.', link: 'https://midjourney.com', hasAffiliate: false, emoji: '🎨' },
-  { id: 'dalle3', name: 'DALL-E 3', category: 'Image Gen', description: 'OpenAIs powerful image creator with incredible prompt adherence.', link: 'https://openai.com/dall-e-3', hasAffiliate: false, emoji: '🖼️' },
-  { id: 'flux', name: 'Flux.1', category: 'Image Gen', description: 'The new open-source king. Realistic and handles text perfectly.', link: 'https://blackforestlabs.ai', hasAffiliate: false, emoji: '🔥' },
-  { id: 'canva', name: 'Canva Magic Studio', category: 'Design', description: 'Essential for quick Gen-Z social media graphics and templates.', link: 'https://canva.com', hasAffiliate: true, emoji: '✨' },
-  { id: 'magnific', name: 'Magnific AI', category: 'Image Gen', description: 'The ultimate image upscaler and detailer. Pro level only.', link: 'https://magnific.ai', hasAffiliate: true, emoji: '🔬' },
-  { id: 'adobefirefly', name: 'Adobe Firefly', category: 'Design', description: 'Legally safe AI generation integrated into Creative Cloud.', link: 'https://adobe.com/firefly', hasAffiliate: true, emoji: '🖌️' },
+  { 
+    id: 'midjourney', 
+    name: 'Midjourney', 
+    category: 'Image Gen', 
+    description: 'The gold standard for high-fidelity artistic AI. Features unrivaled aesthetic control and lighting. Perfect for creating high-ticket digital art, luxury website assets, and massive niche texture packs for the game dev market.', 
+    link: 'https://midjourney.com', 
+    hasAffiliate: false, 
+    emoji: '🎨' 
+  },
+  { 
+    id: 'dalle3', 
+    name: 'DALL-E 3', 
+    category: 'Image Gen', 
+    description: 'Integrated directly into ChatGPT for seamless workflow. Known for incredible prompt adherence. Use it to generate precise, brand-aligned social media graphics and custom illustrations for high-conversion landing pages.', 
+    link: 'https://openai.com/dall-e-3', 
+    hasAffiliate: false, 
+    emoji: '🖼️' 
+  },
+  { 
+    id: 'flux', 
+    name: 'Flux.1', 
+    category: 'Image Gen', 
+    description: 'The open-source king that handles text rendering perfectly. Essential for Gen-Z entrepreneurs in the Print-on-Demand (POD) space—design hyper-realistic clothing mockups and posters with readable text in seconds.', 
+    link: 'https://blackforestlabs.ai', 
+    hasAffiliate: false, 
+    emoji: '🔥' 
+  },
+  { 
+    id: 'canva', 
+    name: 'Canva Magic Studio', 
+    category: 'Design', 
+    description: 'The ultimate rapid-design suite. Features AI background removal, magic resize, and brand-voice generators. Use it to dominate TikTok and Instagram by templating and scaling months of content in a single afternoon.', 
+    link: 'https://canva.com', 
+    hasAffiliate: true, 
+    emoji: '✨' 
+  },
+  { 
+    id: 'magnific', 
+    name: 'Magnific AI', 
+    category: 'Image Gen', 
+    description: 'A pro-level image upscaler that adds "hallucinated" detail for extreme clarity. Use it to turn standard AI-generated concepts into high-resolution 4K assets that sell for premium prices to design agencies.', 
+    link: 'https://magnific.ai', 
+    hasAffiliate: true, 
+    emoji: '🔬' 
+  },
+  { 
+    id: 'adobefirefly', 
+    name: 'Adobe Firefly', 
+    category: 'Design', 
+    description: 'Ethical AI generation trained on licensed content. Features Generative Fill within Photoshop. Key for high-end professional client work where copyright safety and pixel-perfect editing are non-negotiable.', 
+    link: 'https://adobe.com/firefly', 
+    hasAffiliate: true, 
+    emoji: '🖌️' 
+  },
 
   // --- VIDEO & ANIMATION ---
-  { id: 'luma-dream', name: 'Luma Dream Machine', category: 'Video', description: 'Stunningly realistic video generation from text or images.', link: 'https://lumalabs.ai/dream-machine', hasAffiliate: false, emoji: '🎥' },
-  { id: 'runway-gen3', name: 'Runway Gen-3 Alpha', category: 'Video', description: 'Hollywood-level video control and quality. Pure alpha.', link: 'https://runwayml.com', hasAffiliate: false, emoji: '🎬' },
-  { id: 'kling', name: 'Kling AI', category: 'Video', description: 'Incredibly long and stable AI video generations.', link: 'https://klingai.com', hasAffiliate: false, emoji: '👾' },
-  { id: 'heygen', name: 'HeyGen', category: 'Video', description: 'Avatar creation for faceless channels. Top tier quality.', link: 'https://heygen.com', hasAffiliate: true, emoji: '👤' },
-  { id: 'invideo', name: 'InVideo AI', category: 'Video', description: 'Turn scripts into ready-to-post videos in minutes.', link: 'https://invideo.io', hasAffiliate: true, emoji: '📼' },
-  { id: 'pika', name: 'Pika Labs', category: 'Video', description: 'Creative animation and effect tool. Very Gen-Z vibes.', link: 'https://pika.art', hasAffiliate: false, emoji: '🐦' },
+  { 
+    id: 'luma-dream', 
+    name: 'Luma Dream Machine', 
+    category: 'Video', 
+    description: 'Stunningly realistic video generation using text or start/end frames. Perfect for producing cinematic B-roll for YouTube documentaries or high-aesthetic backgrounds for faceless TikTok channels.', 
+    link: 'https://lumalabs.ai/dream-machine', 
+    hasAffiliate: false, 
+    emoji: '🎥' 
+  },
+  { 
+    id: 'runway-gen3', 
+    name: 'Runway Gen-3 Alpha', 
+    category: 'Video', 
+    description: 'The industry leader in cinematic AI video with advanced camera control. Use it to build an "AI Filmmaking" portfolio or provide high-end motion graphics for tech-forward startup brands.', 
+    link: 'https://runwayml.com', 
+    hasAffiliate: false, 
+    emoji: '🎬' 
+  },
+  { 
+    id: 'kling', 
+    name: 'Kling AI', 
+    category: 'Video', 
+    description: 'Known for incredibly long (up to 10s-2min) and stable video generations. Best for visual storytelling, complex animations, and any project that needs consistent motion without "hallucination" drifts.', 
+    link: 'https://klingai.com', 
+    hasAffiliate: false, 
+    emoji: '👾' 
+  },
+  { 
+    id: 'heygen', 
+    name: 'HeyGen', 
+    category: 'Video', 
+    description: 'Faceless channel king. Create hyper-realistic avatars that speak multiple languages. Use it to build "Digital Influencers" or translate your content to global audiences without re-filming a single second.', 
+    link: 'https://heygen.com', 
+    hasAffiliate: true, 
+    emoji: '👤' 
+  },
+  { 
+    id: 'invideo', 
+    name: 'InVideo AI', 
+    category: 'Video', 
+    description: 'The speed-runner for video content. Features an AI-powered co-pilot that turns prompts into full, edited videos with stock footage. Use it to test 10 different niche channel ideas in 24 hours.', 
+    link: 'https://invideo.io', 
+    hasAffiliate: true, 
+    emoji: '📼' 
+  },
+  { 
+    id: 'pika', 
+    name: 'Pika Labs', 
+    category: 'Video', 
+    description: 'Creative animation tool with a distinct, trendy aesthetic. Features Lip-Sync and specialized motion effects. Perfect for high-energy Gen-Z edits and experimental social media clips that need to stop the scroll.', 
+    link: 'https://pika.art', 
+    hasAffiliate: false, 
+    emoji: '🐦' 
+  },
 
   // --- WRITING & SEO ---
-  { id: 'claude', name: 'Claude 3.5 Sonnet', category: 'Writing', description: 'The smartest writer on the planet. Best for long-form content.', link: 'https://anthropic.com', hasAffiliate: false, emoji: '🧠' },
-  { id: 'gemini', name: 'Gemini 1.5 Pro', category: 'Writing', description: 'Massive context window. Analyzing whole books/codebases in seconds.', link: 'https://gemini.google.com', hasAffiliate: false, emoji: '💎' },
-  { id: 'chatgpt', name: 'ChatGPT-4o', category: 'Writing', description: 'The all-around champ. Voice, search, and logic in one app.', link: 'https://chatgpt.com', hasAffiliate: false, emoji: '🤖' },
-  { id: 'jasper', name: 'Jasper', category: 'Marketing', description: 'AI built specifically for brands and advertising copy.', link: 'https://jasper.ai', hasAffiliate: true, emoji: '📈' },
-  { id: 'copy-ai', name: 'Copy.ai', category: 'Marketing', description: 'Automating high-scale marketing workflows for agencies.', link: 'https://copy.ai', hasAffiliate: true, emoji: '✍️' },
-  { id: 'surfer-seo', name: 'Surfer SEO', category: 'SEO', description: 'Analyze your content to guarantee page 1 rankings.', link: 'https://surferseo.com', hasAffiliate: true, emoji: '🌐' },
+  { 
+    id: 'claude', 
+    name: 'Claude 3.5 Sonnet', 
+    category: 'Writing', 
+    description: 'Features superior logic and a human-like tone. Best for ghostwriting high-authority LinkedIn posts, drafting 2,000+ word deep-dives, and complex problem-solving that requires nuanced reasoning.', 
+    link: 'https://anthropic.com', 
+    hasAffiliate: false, 
+    emoji: '🧠' 
+  },
+  { 
+    id: 'gemini', 
+    name: 'Gemini 1.5 Pro', 
+    category: 'Writing', 
+    description: 'Massive 2M+ context window. Use it to analyze entire competitive landscapes, summarize 1,000-page PDF reports, or debug massive codebases in seconds. The ultimate "Big Data" sidekick for high-level research.', 
+    link: 'https://gemini.google.com', 
+    hasAffiliate: false, 
+    emoji: '💎' 
+  },
+  { 
+    id: 'chatgpt', 
+    name: 'ChatGPT-4o', 
+    category: 'Writing', 
+    description: 'The ultimate general-purpose AI co-pilot. Features real-time voice, web search, and image analysis. Ideal for daily brainstorming, rapid coding help, and managing small-biz operations with a single app.', 
+    link: 'https://chatgpt.com', 
+    hasAffiliate: false, 
+    emoji: '🤖' 
+  },
+  { 
+    id: 'jasper', 
+    name: 'Jasper', 
+    category: 'Marketing', 
+    description: 'Enterprise-grade AI built for direct-response marketing. Features performance-tracking and brand-voice consistency. Use it to run a high-ticket copywriting agency with scale and precision.', 
+    link: 'https://jasper.ai', 
+    hasAffiliate: true, 
+    emoji: '📈' 
+  },
+  { 
+    id: 'copy-ai', 
+    name: 'Copy.ai', 
+    category: 'Marketing', 
+    description: 'Automates repetitive marketing tasks and large-scale growth workflows. Best for GTM teams and agencies that need to generate 100+ variations of ad copy or SEO metadata without sacrificing quality.', 
+    link: 'https://copy.ai', 
+    hasAffiliate: true, 
+    emoji: '✍️' 
+  },
+  { 
+    id: 'surfer-seo', 
+    name: 'Surfer SEO', 
+    category: 'SEO', 
+    description: 'Analyze competitors and optimize content using real-time data. Essential for Gen-Z SEOs aiming to rank niche authority sites and guarantee high-commission affiliate traffic from Google.', 
+    link: 'https://surferseo.com', 
+    hasAffiliate: true, 
+    emoji: '🌐' 
+  },
 
   // --- AUTOMATION & HUSTLE ---
-  { id: 'make', name: 'Make.com', category: 'Automation', description: 'Connect anything to anything. The backbone of AI hustles.', link: 'https://make.com', hasAffiliate: true, emoji: '⚙️' },
-  { id: 'zapier', name: 'Zapier Central', category: 'Automation', description: 'No-code bots that work across 6,000+ apps.', link: 'https://zapier.com', hasAffiliate: true, emoji: '⚡' },
-  { id: 'perplexity', name: 'Perplexity Pro', category: 'Research', description: 'AI-powered search engine that cites every source. 10x speed.', link: 'https://perplexity.ai', hasAffiliate: true, emoji: '🔍' },
-  { id: 'gumroad', name: 'Gumroad', category: 'Selling', description: 'Top site for selling AI-generated digital products.', link: 'https://gumroad.com', hasAffiliate: false, emoji: '💰' },
-  { id: 'beehiiv', name: 'beehiiv', category: 'Newsletter', description: 'The essential platform for AI-powered newsletters.', link: 'https://beehiiv.com', hasAffiliate: true, emoji: '🐝' },
+  { 
+    id: 'make', 
+    name: 'Make.com', 
+    category: 'Automation', 
+    description: 'The "Lego for the Internet." Build complex, multi-step automated income systems by connecting 1,000+ apps. Use it to run a "one-person empire" where bots handle every task from lead gen to fulfillment.', 
+    link: 'https://make.com', 
+    hasAffiliate: true, 
+    emoji: '⚙️' 
+  },
+  { 
+    id: 'zapier', 
+    name: 'Zapier Central', 
+    category: 'Automation', 
+    description: 'Connect standard business apps to powerful AI agents. Features "Central" for teaching bots custom workflows. Perfect for selling high-end "AI Business Audits" to local non-tech businesses for high retainers.', 
+    link: 'https://zapier.com', 
+    hasAffiliate: true, 
+    emoji: '⚡' 
+  },
+  { 
+    id: 'perplexity', 
+    name: 'Perplexity Pro', 
+    category: 'Research', 
+    description: 'The fastest path to verified information. Cites sources in real-time. Use it for high-speed research for your AI newsletter, checking facts for YouTube scripts, or analyzing trending tech in seconds.', 
+    link: 'https://perplexity.ai', 
+    hasAffiliate: true, 
+    emoji: '🔍' 
+  },
+  { 
+    id: 'gumroad', 
+    name: 'Gumroad', 
+    category: 'Selling', 
+    description: 'The simplest platform to sell digital assets—from custom AI prompt guides to complex Notion hubs. High conversion rates and zero friction for Gen-Z creators building their first digital product store.', 
+    link: 'https://gumroad.com', 
+    hasAffiliate: false, 
+    emoji: '💰' 
+  },
+  { 
+    id: 'beehiiv', 
+    name: 'beehiiv', 
+    category: 'Newsletter', 
+    description: 'Built by the team that grew Morning Brew. Features internal ad networks and boost programs. Essential for turning local niche expertise into a recurring, AI-curated cash-flow machine.', 
+    link: 'https://beehiiv.com', 
+    hasAffiliate: true, 
+    emoji: '🐝' 
+  },
 
   // --- AUDIO & VOICE ---
-  { id: 'elevenlabs', name: 'ElevenLabs', category: 'Audio', description: 'The best AI voices globally. Perfect for TikTok narrations.', link: 'https://elevenlabs.io', hasAffiliate: true, emoji: '🎙️' },
-  { id: 'suno', name: 'Suno AI', category: 'Audio', description: 'Create full, radio-ready songs in seconds. Viral bait.', link: 'https://suno.com', hasAffiliate: false, emoji: '🎵' },
-  { id: 'udio', name: 'Udio', category: 'Audio', description: 'Unmatched musical fidelity. The high-end king of AI music.', link: 'https://udio.com', hasAffiliate: false, emoji: '🎹' },
-  { id: 'riverside', name: 'Riverside.fm', category: 'Audio', description: 'AI-powered podcast and video recording. Pro specs.', link: 'https://riverside.fm', hasAffiliate: true, emoji: '🎤' },
+  { 
+    id: 'elevenlabs', 
+    name: 'ElevenLabs', 
+    category: 'Audio', 
+    description: 'The world leader in AI voice synthesis. Features voice cloning and speech-to-speech. Use it to create high-retention TikTok narrations, professional-grade audiobooks, or custom voiceovers for faceless YouTube brands.', 
+    link: 'https://elevenlabs.io', 
+    hasAffiliate: true, 
+    emoji: '🎙️' 
+  },
+  { 
+    id: 'suno', 
+    name: 'Suno AI', 
+    category: 'Audio', 
+    description: 'Generate full, radio-ready songs in any style with just a prompt. Use it to create viral background beats, novelty hits for TikTok challenges, or original soundtracks for your faceless video empire.', 
+    link: 'https://suno.com', 
+    hasAffiliate: false, 
+    emoji: '🎵' 
+  },
+  { 
+    id: 'udio', 
+    name: 'Udio', 
+    category: 'Audio', 
+    description: 'Unmatched musical fidelity for high-end production. Features professional vocals and intricate instrumentals. Perfect for high-fidelity soundtracking and projects that need a distinct, radio-quality vibe.', 
+    link: 'https://udio.com', 
+    hasAffiliate: false, 
+    emoji: '🎹' 
+  },
+  { 
+    id: 'riverside', 
+    name: 'Riverside.fm', 
+    category: 'Audio', 
+    description: 'Professional remote recording with AI-powered audio mastering. Essential for Gen-Z "Digital Nomad" podcasters who want to capture studio-quality audio from guests anywhere in the world on a budget.', 
+    link: 'https://riverside.fm', 
+    hasAffiliate: true, 
+    emoji: '🎤' 
+  },
 
   // --- BUSINESS & PRODUCTIVITY ---
-  { id: 'notion', name: 'Notion AI', category: 'Productivity', description: 'The all-in-one workspace now with built-in intelligence.', link: 'https://notion.so', hasAffiliate: true, emoji: '📝' },
-  { id: 'gamma', name: 'Gamma', category: 'Design', description: 'AI that creates full presentations and websites from a prompt.', link: 'https://gamma.app', hasAffiliate: true, emoji: '🪄' },
-  { id: 'tome', name: 'Tome', category: 'Design', description: 'Generative storytelling for pitch decks and visual narratives.', link: 'https://tome.app', hasAffiliate: false, emoji: '📖' },
-  { id: 'fireflies', name: 'Fireflies.ai', category: 'Productivity', description: 'AI meeting assistant that records, transcribes, and summarizes.', link: 'https://fireflies.ai', hasAffiliate: true, emoji: '🦗' },
-  { id: 'otter', name: 'Otter.ai', category: 'Productivity', description: 'Smart note-taking and real-time transcription for teams.', link: 'https://otter.ai', hasAffiliate: true, emoji: '🦦' },
+  { 
+    id: 'notion', 
+    name: 'Notion AI', 
+    category: 'Productivity', 
+    description: 'Your second brain, supercharged. Use AI to draft meeting notes, organize complex hustle databases, and summarize dense content within your centralized personal workspace.', 
+    link: 'https://notion.so', 
+    hasAffiliate: true, 
+    emoji: '📝' 
+  },
+  { 
+    id: 'gamma', 
+    name: 'Gamma', 
+    category: 'Design', 
+    description: 'The "Anti-PowerPoint." Generate high-aesthetic presentations and mini-sites in 30 seconds. Use it to crush pitch meetings, send gorgeous proposals to clients, and build landing pages that actually convert.', 
+    link: 'https://gamma.app', 
+    hasAffiliate: true, 
+    emoji: '🪄' 
+  },
+  { 
+    id: 'tome', 
+    name: 'Tome', 
+    category: 'Design', 
+    description: 'Visual-first generative storytelling for narrative-driven pitch decks and high-end visual concepts. Perfect for creative directors and designers building high-concept project proposals.', 
+    link: 'https://tome.app', 
+    hasAffiliate: false, 
+    emoji: '📖' 
+  },
+  { 
+    id: 'fireflies', 
+    name: 'Fireflies.ai', 
+    category: 'Productivity', 
+    description: 'Automated meeting intelligence. Not just transcripts, but actionable summaries. Use it to manage dozens of clients without ever forgetting a single task or deadline from a Zoom call.', 
+    link: 'https://fireflies.ai', 
+    hasAffiliate: true, 
+    emoji: '🦗' 
+  },
+  { 
+    id: 'otter', 
+    name: 'Otter.ai', 
+    category: 'Productivity', 
+    description: 'Real-time transcription and collaborative note-taking for team calls. Essential for fast-paced startup environments and complex technical projects that need a running log of truth.', 
+    link: 'https://otter.ai', 
+    hasAffiliate: true, 
+    emoji: '🦦' 
+  },
 
   // --- DEVELOPER TOOLS ---
-  { id: 'cursor', name: 'Cursor', category: 'Dev', description: 'The AI code editor that actually understands your whole project.', link: 'https://cursor.com', hasAffiliate: false, emoji: '💻' },
-  { id: 'v0', name: 'v0.dev', category: 'Dev', description: 'Vercels AI for generating production-ready React UI code.', link: 'https://v0.dev', hasAffiliate: false, emoji: '⚡' },
-  { id: 'github-copilot', name: 'GitHub Copilot', category: 'Dev', description: 'The OG AI pair programmer. Essential for devs.', link: 'https://github.com/features/copilot', hasAffiliate: false, emoji: '🐙' },
-  { id: 'replit', name: 'Replit Agent', category: 'Dev', description: 'Build and deploy full-stack apps just by chatting.', link: 'https://replit.com', hasAffiliate: false, emoji: '🌀' },
+  { 
+    id: 'cursor', 
+    name: 'Cursor', 
+    category: 'Dev', 
+    description: 'The coding "Alpha." Use natural language to build and edit full-scale apps. The best tool for non-coders to enter the SaaS market by describing their vision and letting the AI handle the syntax.', 
+    link: 'https://cursor.com', 
+    hasAffiliate: false, 
+    emoji: '💻' 
+  },
+  { 
+    id: 'v0', 
+    name: 'v0.dev', 
+    category: 'Dev', 
+    description: 'Vercel’s AI for generating production-ready React UI code from prompts. Essential for landing-page hacks—build a top-tier visual interface in 5 minutes and skip the hours of manual CSS.', 
+    link: 'https://v0.dev', 
+    hasAffiliate: false, 
+    emoji: '⚡' 
+  },
+  { 
+    id: 'github-copilot', 
+    name: 'GitHub Copilot', 
+    category: 'Dev', 
+    description: 'The original AI assistant for developers. Features intelligent autofill and logical block suggestions. A must-have for accelerating your technical projects and maintaining coding flow state.', 
+    link: 'https://github.com/features/copilot', 
+    hasAffiliate: false, 
+    emoji: '🐙' 
+  },
+  { 
+    id: 'replit', 
+    name: 'Replit Agent', 
+    category: 'Dev', 
+    description: 'The end-to-end "Chat-to-Deployment" tool. Build and launch a functional web app solely through a chat interface. Best for testing MVP ideas fast without messing with servers or cloud config.', 
+    link: 'https://replit.com', 
+    hasAffiliate: false, 
+    emoji: '🌀' 
+  },
 
   // --- SOCIAL & VIRAL ---
-  { id: 'opus-clip', name: 'OpusClip', category: 'Video', description: 'Turn long videos into viral shorts in one click.', link: 'https://opus.pro', hasAffiliate: true, emoji: '🎬' },
-  { id: 'submagic', name: 'Submagic', category: 'Video', description: 'The best viral captions for TikTok and Reels. Dynamic AF.', link: 'https://submagic.co', hasAffiliate: true, emoji: '💬' },
-  { id: 'captions', name: 'Captions.ai', category: 'Video', description: 'AI studio for creators. Teleprompter, eye-contact fix, etc.', link: 'https://captions.ai', hasAffiliate: false, emoji: '📱' },
-  { id: 'mubert', name: 'Mubert', category: 'Audio', description: 'Generative AI music for content creators. No copyright issues.', link: 'https://mubert.com', hasAffiliate: true, emoji: '🎧' },
+  { 
+    id: 'opus-clip', 
+    name: 'OpusClip', 
+    category: 'Video', 
+    description: 'The "Repurposing Goldmine." Turn 1 long YouTube video or podcast into 10 viral TikTok shorts with one click. Use it to feed the algorithms daily without ever filming new content.', 
+    link: 'https://opus.pro', 
+    hasAffiliate: true, 
+    emoji: '🎬' 
+  },
+  { 
+    id: 'submagic', 
+    name: 'Submagic', 
+    category: 'Video', 
+    description: 'Retention-first captioning. Features dynamic, high-energy text styles that keep eyes glued to the screen. Key for maximizing watch-time and going viral on Reels and TikTok.', 
+    link: 'https://submagic.co', 
+    hasAffiliate: true, 
+    emoji: '💬' 
+  },
+  { 
+    id: 'captions', 
+    name: 'Captions.ai', 
+    category: 'Video', 
+    description: 'Complete AI creator studio. Features teleprompter and eye-contact fix for perfect delivery. Use it to record high-converting ads that look professional even if you’re reading a script for the first time.', 
+    link: 'https://captions.ai', 
+    hasAffiliate: false, 
+    emoji: '📱' 
+  },
+  { 
+    id: 'mubert', 
+    name: 'Mubert', 
+    category: 'Audio', 
+    description: 'Custom, royalty-free generative music for content creators. No more copyright strikes—generate a unique vibe for every piece of content and keep your revenue safe from claims.', 
+    link: 'https://mubert.com', 
+    hasAffiliate: true, 
+    emoji: '🎧' 
+  },
 
   // --- DATA & DATA SCRAPING ---
-  { id: 'browse-ai', name: 'Browse AI', category: 'Automation', description: 'The easiest way to extract and monitor data from any website.', link: 'https://browse.ai', hasAffiliate: true, emoji: '🕸️' },
-  { id: 'instabase', name: 'Instabase', category: 'Automation', description: 'AI for understanding any document or unstructured data.', link: 'https://instabase.com', hasAffiliate: false, emoji: '📑' },
+  { 
+    id: 'browse-ai', 
+    name: 'Browse AI', 
+    category: 'Automation', 
+    description: 'Extract and monitor data from any website without coding. Features "Robots" that track competitor prices and trending stocks. Use it for high-speed market research and price arbitrage hacks.', 
+    link: 'https://browse.ai', 
+    hasAffiliate: true, 
+    emoji: '🕸️' 
+  },
+  { 
+    id: 'instabase', 
+    name: 'Instabase', 
+    category: 'Automation', 
+    description: 'Turn unstructured PDF data and "messy" documents into clean spreadsheets. Essential for building complex business automation tools for high-value clients in real estate or finance.', 
+    link: 'https://instabase.com', 
+    hasAffiliate: false, 
+    emoji: '📑' 
+  },
 ];
 
 export const POSTS: Post[] = [
