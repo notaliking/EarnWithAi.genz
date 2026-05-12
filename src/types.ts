@@ -17,3 +17,13 @@ export interface SiteConfig {
     tiktok: string;
   };
 }
+
+export interface Tool {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  link: string;
+  hasAffiliate: boolean;
+  emoji: string;
+}
