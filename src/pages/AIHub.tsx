@@ -1,0 +1,253 @@
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Send, Image as ImageIcon, Sparkles, Brain, Bot, Lightbulb, Camera, Loader2, User, Zap } from 'lucide-react';
+import { GoogleGenAI } from "@google/genai";
+
+const TAB_CONFIG = [
+  { id: 'chat', label: 'AI Chat', icon: Bot, color: 'neon-cyan' },
+  { id: 'ideas', label: 'Hustle Ideas', icon: Lightbulb, color: 'neon-pink' },
+  { id: 'vision', label: 'Vision AI', icon: Camera, color: 'neon-purple' },
+  { id: 'images', label: 'AI Art', icon: ImageIcon, color: 'neon-yellow' },
+];
+
+export const AIHub = () => {
+  const [activeTab, setActiveTab] = useState('chat');
+  const [input, setInput] = useState('');
+  const [messages, setMessages] = useState<{ role: 'user' | 'ai', text: string }[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [generatedImage, setGeneratedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [messages]);
+
+  const handleSend = async () => {
+    if (!input.trim() && !selectedImage) return;
+    
+    const userMsg = { role: 'user' as const, text: input };
+    setMessages(prev => [...prev, userMsg]);
+    setInput('');
+    setIsLoading(true);
+
+    try {
+      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      
+      let prompt = input;
+      if (activeTab === 'ideas') {
+        prompt = `Generate 3 specific, high-profit AI business ideas based on this context: ${input}. Each idea should include: 1. The concept 2. The target audience 3. How to monetize it using free AI tools.`;
+      }
+
+      if (activeTab === 'vision' && selectedImage) {
+        const base64Data = selectedImage.split(',')[1];
+        const response = await ai.models.generateContent({
+          model: "gemini-3-flash-preview",
+          contents: {
+            parts: [
+              { inlineData: { mimeType: "image/jpeg", data: base64Data } },
+              { text: input || "Analyze this image and tell me how I can monetize something related to it, or improve it with AI." }
+            ]
+          }
+        });
+        setMessages(prev => [...prev, { role: 'ai', text: response.text || "I see it, but I can't think of anything right now." }]);
+      } else if (activeTab === 'images') {
+         const response = await ai.models.generateContent({
+          model: 'gemini-2.5-flash-image',
+          contents: { parts: [{ text: input }] },
+        });
+        
+        let imageUrl = null;
+        for (const part of response.candidates?.[0]?.content?.parts || []) {
+          if (part.inlineData) {
+            imageUrl = `data:image/png;base64,${part.inlineData.data}`;
+            break;
+          }
+        }
+        
+        if (imageUrl) {
+          setGeneratedImage(imageUrl);
+          setMessages(prev => [...prev, { role: 'ai', text: "Your masterpiece is ready! 🎨✨" }]);
+        } else {
+          setMessages(prev => [...prev, { role: 'ai', text: response.text || "Failed to generate image." }]);
+        }
+      } else {
+        const response = await ai.models.generateContent({
+          model: "gemini-3-flash-preview",
+          contents: prompt,
+          config: {
+            systemInstruction: "You are EarnWithAI.genz's lead AI strategist. Your tone is bold, helpful, and highly focused on monetization and efficiency for Gen Z entrepreneurs. Keep answers concise but packed with value.",
+          }
+        });
+        setMessages(prev => [...prev, { role: 'ai', text: response.text || "Sorry, the matrix is flickering. Try again." }]);
+      }
+    } catch (error) {
+      console.error(error);
+      setMessages(prev => [...prev, { role: 'ai', text: "Matrix Error: Check your connection or API limit." }]);
+    } finally {
+      setIsLoading(false);
+      setSelectedImage(null);
+    }
+  };
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setSelectedImage(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  return (
+    <main className="pt-32 px-6 md:px-10 pb-20 container mx-auto h-[calc(100vh-80px)] flex flex-col">
+      <div className="mb-8 ">
+        <h1 className="text-4xl md:text-7xl font-heading font-black uppercase tracking-tighter mb-4 text-white">
+          AI <span className="neon-text">Command</span> Center 🛸
+        </h1>
+        <p className="text-gray-400 max-w-2xl font-body">
+          The ultimate suite of Google Gemini tools live on your dashboard. Chat, generate, and visualize your hustle.
+        </p>
+      </div>
+
+      <div className="flex-grow flex flex-col md:flex-row gap-6 h-full overflow-hidden">
+        {/* Sidebar Tabs */}
+        <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-x-visible pb-2 md:pb-0">
+          {TAB_CONFIG.map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => {
+                setActiveTab(tab.id);
+                setMessages([]);
+                setGeneratedImage(null);
+              }}
+              className={`flex items-center gap-4 px-6 py-4 rounded-2xl font-black uppercase tracking-widest text-[10px] transition-all whitespace-nowrap
+                ${activeTab === tab.id 
+                  ? `bg-neon-cyan text-dark-bg shadow-[0_0_20px_rgba(69,240,223,0.3)]` 
+                  : 'glass text-gray-400 hover:text-white hover:bg-white/10'}`}
+            >
+              <tab.icon size={16} />
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Main Interface */}
+        <div className="flex-grow flex flex-col glass rounded-3xl border border-white/5 relative overflow-hidden bg-dark-bg/40 backdrop-blur-3xl">
+          {/* Messages Area */}
+          <div ref={scrollRef} className="flex-grow overflow-y-auto p-6 space-y-6 scrollbar-hide">
+            {messages.length === 0 && (
+              <div className="h-full flex flex-col items-center justify-center text-center opacity-30 select-none">
+                <Brain size={80} className="mb-4 animate-pulse" />
+                <h3 className="text-2xl font-black uppercase tracking-tighter">Awaiting Logic...</h3>
+                <p className="font-mono text-xs">READY_FOR_PROMPT_INPUT</p>
+              </div>
+            )}
+            
+            {messages.map((msg, i) => (
+              <motion.div
+                initial={{ opacity: 0, x: msg.role === 'user' ? 20 : -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                key={i}
+                className={`flex gap-4 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
+              >
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-lg ${msg.role === 'user' ? 'bg-neon-pink text-white' : 'bg-neon-cyan text-dark-bg'}`}>
+                  {msg.role === 'user' ? <User size={20} /> : <Sparkles size={20} />}
+                </div>
+                <div className={`p-4 rounded-2xl max-w-[80%] ${msg.role === 'user' ? 'bg-white/10 text-white font-medium' : 'bg-dark-bg/60 text-gray-100 border border-white/5 shadow-inner'}`}>
+                  <p className="text-sm md:text-base leading-relaxed whitespace-pre-wrap">{msg.text}</p>
+                </div>
+              </motion.div>
+            ))}
+
+            {activeTab === 'images' && generatedImage && (
+              <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="flex justify-center py-6">
+                <div className="relative group">
+                  <img 
+                    src={generatedImage} 
+                    alt="Generated" 
+                    className="max-w-full md:max-w-lg rounded-3xl shadow-[0_0_50px_rgba(69,240,223,0.3)] border-4 border-neon-cyan/20" 
+                  />
+                  <a 
+                    href={generatedImage} 
+                    download="EarnWithAI_Generated.png"
+                    className="absolute bottom-4 right-4 bg-neon-cyan text-dark-bg px-4 py-2 rounded-xl font-black text-[10px] uppercase opacity-0 group-hover:opacity-100 transition-opacity no-underline"
+                  >
+                    Download Alpha 💾
+                  </a>
+                </div>
+              </motion.div>
+            )}
+
+            {isLoading && (
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-xl bg-neon-cyan text-dark-bg flex items-center justify-center">
+                  <Loader2 className="animate-spin" size={20} />
+                </div>
+                <div className="italic text-gray-500 text-sm py-2">Consulting with Gemini 3...</div>
+              </div>
+            )}
+          </div>
+
+          {/* Prompt Area */}
+          <div className="p-6 border-t border-white/5 bg-white/5 backdrop-blur-xl">
+            {selectedImage && (
+              <div className="mb-4 flex items-center gap-4 animate-in fade-in slide-in-from-bottom-2">
+                <div className="relative w-16 h-16 rounded-lg overflow-hidden border-2 border-neon-cyan">
+                  <img src={selectedImage} alt="Preview" className="w-full h-full object-cover" />
+                  <button onClick={() => setSelectedImage(null)} className="absolute top-0 right-0 bg-red-500 text-white rounded-bl-lg p-1">×</button>
+                </div>
+                <span className="text-xs text-neon-cyan uppercase font-bold tracking-widest">Image Loaded into Logic Matrix</span>
+              </div>
+            )}
+            
+            <div className="flex items-center gap-4">
+              {activeTab === 'vision' && (
+                <button 
+                  onClick={() => fileInputRef.current?.click()}
+                  className="w-12 h-12 flex items-center justify-center glass rounded-2xl text-neon-cyan hover:bg-neon-cyan hover:text-dark-bg transition-all"
+                >
+                  <Camera size={20} />
+                </button>
+              )}
+              <input 
+                type="text"
+                placeholder={
+                  activeTab === 'chat' ? 'Ask anything about automation...' :
+                  activeTab === 'ideas' ? 'Describe your niche or skills...' :
+                  activeTab === 'vision' ? 'Ask about this image...' :
+                  'Describe the art you want to create...'
+                }
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                className="flex-grow bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-neon-cyan transition-all text-sm md:text-base font-medium placeholder:italic"
+              />
+              <button 
+                onClick={handleSend}
+                disabled={isLoading}
+                className="w-12 h-12 flex items-center justify-center bg-neon-cyan text-dark-bg rounded-2xl shadow-xl hover:scale-105 active:scale-95 transition-all"
+              >
+                <Send size={20} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <input 
+        type="file" 
+        hidden 
+        ref={fileInputRef} 
+        accept="image/*" 
+        onChange={handleImageUpload} 
+      />
+    </main>
+  );
+};

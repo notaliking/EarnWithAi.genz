@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Rocket, Zap } from 'lucide-react';
+import { ArrowRight, Rocket, Zap, Bot } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { POSTS } from '../constants.ts';
 import { Post } from '../types.ts';
@@ -153,6 +153,68 @@ export const Home = () => {
         </div>
       </section>
 
+      {/* AI Hub Feature Section */}
+      <section className="container mx-auto px-6 md:px-10 py-24">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="order-2 lg:order-1"
+          >
+            <span className="text-neon-cyan font-black uppercase tracking-[0.4em] text-xs mb-4 block">New Live Features</span>
+            <h2 className="text-5xl md:text-7xl font-heading font-black uppercase tracking-tighter mb-8 text-white leading-none">
+              The <span className="neon-text">AI Command</span> <br/>Center is Live 👽
+            </h2>
+            <p className="text-gray-400 text-xl mb-10 leading-relaxed font-body">
+              Stop reading and start doing. Access our live Google Gemini powered tools: Chat with the AlphaBot, generate business ideas in seconds, and visualize your future with Vision AI.
+            </p>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-4 glass p-4 rounded-2xl border-neon-cyan/20">
+                <div className="w-10 h-10 rounded-xl bg-neon-cyan/20 flex items-center justify-center text-neon-cyan">
+                  <Bot size={20} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white text-sm">HustleBot Pro</h4>
+                  <p className="text-gray-500 text-xs tracking-tight uppercase">Live Chat Strategy Assistant</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 glass p-4 rounded-2xl border-neon-pink/20">
+                <div className="w-10 h-10 rounded-xl bg-neon-pink/20 flex items-center justify-center text-neon-pink">
+                  <Zap size={20} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white text-sm">Idea Fast-Track</h4>
+                  <p className="text-gray-500 text-xs tracking-tight uppercase">Instant Monetization Matrix</p>
+                </div>
+              </div>
+            </div>
+            <Link to="/ai-hub" className="mt-10 inline-block bg-neon-cyan text-dark-bg px-10 py-5 rounded-2xl font-black text-lg hover:shadow-[0_0_30px_rgba(69,240,223,0.6)] transition-all hover:scale-105 active:scale-95 no-underline uppercase tracking-tighter">
+              Launch Command Center 🛸
+            </Link>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="order-1 lg:order-2 glass rounded-[50px] aspect-square relative overflow-hidden group border border-white/5"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/20 via-transparent to-neon-pink/20 group-hover:scale-110 transition-transform duration-1000"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-neon-cyan blur-[60px] opacity-20 animate-pulse"></div>
+                <Rocket size={160} className="text-white relative z-10 group-hover:-translate-y-4 transition-transform duration-700 ease-out" />
+              </div>
+            </div>
+            <div className="absolute bottom-10 left-10 right-10 glass p-6 rounded-3xl backdrop-blur-3xl border-white/10">
+              <p className="font-mono text-[10px] text-neon-cyan mb-2">SYSTEM_STATUS: OPERATIONAL</p>
+              <h3 className="text-xl font-black uppercase text-white tracking-widest">Connect to Gemini 3</h3>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Latest Posts */}
       <section id="blog" className="container mx-auto px-6 md:px-10 py-32">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
@@ -167,7 +229,7 @@ export const Home = () => {
           </Link>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {POSTS.map((post) => (
+          {POSTS.slice(0, 6).map((post) => (
             <BlogCard key={post.id} post={post} />
           ))}
         </div>

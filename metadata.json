@@ -1,6 +1,6 @@
 {
   "name": "EarnWithAI.genz",
-  "description": "The ultimate Gen-Z hub for automating side hustles and stacking paper with AI. No cap, just income. 🚀",
-  "requestFramePermissions": [],
+  "description": "EarnWithAI.genz is the ultimate hub for Gen-Z to master AI side hustles, live automation, and digital income. Use our live Google Gemini tools to generate ideas, chat with expert agents, and build your future. No cap, just pure alpha strategies for the future of work.",
+  "requestFramePermissions": ["camera", "microphone"],
   "majorCapabilities": []
 }
