@@ -118,5 +118,62 @@ Stop scrolling and start prompting. The AI revolution isn't waiting for you to c
     excerpt: "How to use Claude and Gemini to write high-converting ads for brands.",
     author: "PromptQueen",
     content: "Content coming soon..."
+  },
+  {
+    id: 'side-hustle-4',
+    title: "The $1,000/mo AI Newsletter Blueprint",
+    date: "2026-05-13",
+    category: "AUTOMATION",
+    emoji: "📧",
+    excerpt: "How to build, grow, and monetize an AI-curated newsletter on beehiiv.",
+    author: "Z-Lord",
+    content: `
+## The Newsletter Gold Rush 📧
+
+Newsletters are the new real estate. With AI, you can curate, write, and format a professional-grade newsletter in 30 minutes a week.
+
+### The Stack
+1. **Curator:** Use Perplexity to find the top AI news of the week.
+2. **Writer:** Feed the news into Claude 3.5 with a specific "Gen-Z" tone prompt.
+3. **Platform:** beehiiv for growth tools and monetization.
+
+### Growth Strategy
+*   Post "Thread Alphas" on Twitter/X.
+*   Run small TikTok ads with ElevenLabs voiceovers.
+*   Collaborate with other AI newsletters for cross-promos.
+
+### Conclusion
+Don't sleep on email. It's the only platform you actually own. 🚀
+    `
+  },
+  {
+    id: 'side-hustle-5',
+    title: "Faceless YouTube: The Ultimate Passive Income",
+    date: "2026-05-14",
+    category: "VIDEO",
+    emoji: "📺",
+    excerpt: "Use Luma and HeyGen to build a channel that prints cash while you sleep.",
+    author: "ViralGen",
+    content: "Content coming soon..."
+  },
+  {
+    id: 'side-hustle-6',
+    title: "Ghostwriting for CEOs with Claude 3.5",
+    date: "2026-05-15",
+    category: "FREELANCING",
+    emoji: "🕴️",
+    excerpt: "CEOs are too busy to post on LinkedIn. Do it for them using AI and charge $2k/mo.",
+    author: "PromptQueen",
+    content: "Content coming soon..."
+  },
+  {
+    id: 'side-hustle-7',
+    title: "Automated E-com Support: Agency Alpha",
+    date: "2026-05-16",
+    category: "AGENCY",
+    emoji: "🛒",
+    excerpt: "Build custom GPTs for Shopify brands to handle 90% of their tickets.",
+    author: "AlphaDev",
+    content: "Content coming soon..."
   }
 ];
