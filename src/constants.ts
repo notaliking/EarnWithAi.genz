@@ -3468,7 +3468,7 @@ You are the first generation to have the "Gods of Logic" at your fingertips for 
 `
   },
   {
-    id: 'fomo-1',
+    id: 'fomo-wealth-gap',
     title: "MISSING OUT: The AI Wealth Gap is Widening",
     date: "2026-05-18",
     category: "FOMO",

@@ -57,7 +57,7 @@ export const AIHub = () => {
       if (activeTab === 'vision' && selectedImage) {
         const base64Data = selectedImage.split(',')[1];
         const response = await ai.models.generateContent({
-          model: "gemini-3-flash-preview",
+          model: "gemini-flash-latest",
           contents: {
             parts: [
               { inlineData: { mimeType: "image/jpeg", data: base64Data } },
@@ -88,7 +88,7 @@ export const AIHub = () => {
         }
       } else {
         const response = await ai.models.generateContent({
-          model: "gemini-3-flash-preview",
+          model: "gemini-flash-latest",
           contents: prompt,
           config: {
             systemInstruction: "You are EarnWithAI.genz's lead AI strategist. Your tone is bold, helpful, and highly focused on monetization and efficiency for Gen Z entrepreneurs. Keep answers concise but packed with value.",
@@ -96,9 +96,17 @@ export const AIHub = () => {
         });
         setMessages(prev => [...prev, { role: 'ai', text: response.text || "Sorry, the matrix is flickering. Try again." }]);
       }
-    } catch (error) {
-      console.error(error);
-      setMessages(prev => [...prev, { role: 'ai', text: "Matrix Error: Check your connection or API limit." }]);
+    } catch (error: any) {
+      console.error("Gemini AI Error:", error);
+      let errorMsg = "Matrix Error: Check your connection or API limit.";
+      
+      if (error?.message?.includes('403') || error?.message?.includes('PERMISSION_DENIED') || error?.message?.includes('API_KEY_INVALID')) {
+        errorMsg = "Matrix Access Denied: Please verify your Gemini API key in Settings > Secrets.";
+      } else if (error?.message?.includes('429') || error?.message?.includes('RESOURCE_EXHAUSTED')) {
+        errorMsg = "API Limit Reached: The grid is overloaded. Try again in a minute or check your quota.";
+      }
+      
+      setMessages(prev => [...prev, { role: 'ai', text: errorMsg }]);
     } finally {
       setIsLoading(false);
       setSelectedImage(null);
@@ -201,7 +209,7 @@ export const AIHub = () => {
                 <div className="w-10 h-10 rounded-xl bg-neon-cyan text-dark-bg flex items-center justify-center">
                   <Loader2 className="animate-spin" size={20} />
                 </div>
-                <div className="italic text-gray-500 text-sm py-2">Consulting with Gemini 3...</div>
+                <div className="italic text-gray-500 text-sm py-2">Consulting with the AI Matrix...</div>
               </div>
             )}
           </div>
