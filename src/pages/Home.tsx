@@ -3,7 +3,6 @@ import { ArrowRight, Rocket, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { POSTS } from '../constants.ts';
 import { Post } from '../types.ts';
-import { HustleRecommender } from '../components/HustleRecommender.tsx';
 
 const BlogCard = ({ post }: { post: Post }) => (
   <motion.article 
@@ -153,8 +152,6 @@ export const Home = () => {
           </div>
         </div>
       </section>
-
-      <HustleRecommender />
 
       {/* Latest Posts */}
       <section id="blog" className="container mx-auto px-6 md:px-10 py-32">

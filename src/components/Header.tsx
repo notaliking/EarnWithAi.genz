@@ -20,7 +20,6 @@ export const Header = () => {
       <nav className="hidden md:flex gap-10 font-semibold text-gray-300 uppercase tracking-[0.2em] text-[10px]">
         <Link to="/" className={`hover:text-neon-cyan transition-all duration-200 no-underline ${location.pathname === '/' ? 'text-neon-cyan' : ''}`}>Home</Link>
         <Link to="/blog" className={`hover:text-white transition-all duration-200 no-underline ${location.pathname === '/blog' ? 'text-neon-cyan' : ''}`}>Blog</Link>
-        <Link to="/lab" className={`hover:text-white transition-all duration-200 no-underline ${location.pathname === '/lab' ? 'text-neon-cyan' : ''}`}>AI Lab</Link>
         <Link to="/tools" className={`hover:text-white transition-all duration-200 no-underline uppercase font-semibold text-[10px] tracking-[0.2em] ${location.pathname === '/tools' ? 'text-neon-cyan' : ''}`}>Tools Library</Link>
         <Link to="/about" className={`hover:text-white transition-all duration-200 no-underline ${location.pathname === '/about' ? 'text-neon-cyan' : ''}`}>About</Link>
       </nav>
