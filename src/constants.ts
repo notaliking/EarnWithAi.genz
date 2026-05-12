@@ -352,6 +352,75 @@ Building software isn't just about code; it's about **trust**. When you build a 
 ### Your First Step
 Pick a subreddit you lurk in. Find a problem people keep complaining about. Ask yourself: *"Can I build an AI wrapper to fix this in a weekend?"* If the answer is yes, you have your alpha. 🚀
 `
+  },
+  {
+    id: 'side-hustle-9',
+    title: "The Ghostwriting Empire: AI Scripting for TikTokers",
+    date: "2026-05-19",
+    category: "CREATIVE",
+    emoji: "✍️",
+    excerpt: "Top creators are burnt out. They have the audience, you have the AI-aided scripts. Here is how to charge $500/week per client.",
+    author: "ViralGen",
+    featuredImage: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=2000&auto=format&fit=crop",
+    content: `
+## Become the Brain Behind the Face ✍️
+
+Top-tier creators on TikTok and Reels have a massive problem: **Retention**. They know how to film, but they often struggle to write hooks that keep people watching.
+
+### The Opportunity
+You don't need to be a writer. You need to be an **AI Orchestrer**. 
+
+1.  **The Hook Master:** Use a custom GPT trained on the "MrBeast hook style" to take a creator's raw idea and turn it into 5 viral hook variations.
+2.  **The Script Runner:** Use AI to analyze the top-performing videos in their niche and generate a script that follows the same psychological pacing (The "AIDA" framework).
+3.  **The Packaging:** Deliver the scripts and hooks in a Notion dashboard. 
+
+### The Pricing Model 💸
+*   **The Alpha Package:** 5 scripts/week = $500/month.
+*   **The Whale Package:** 15 scripts/week + AI-generated thumbnail ideas = $1,500/month.
+*   **Scale:** Manage 5 clients with a single AI workflow.
+
+### Tools to Use
+*   **Perplexity:** For research and finding trending topics.
+*   **Claude 3.5 Sonnet:** For high-quality, human-like voice writing.
+*   **Midjourney:** For generating viral thumbnail mockups.
+
+### Closing the Deal
+Find a creator with 50k-100k followers who is postng inconsistently. Send them 3 hooks for their next video for free. Once they see the views spike, they'll hire you on retainer. no cap. 🚀
+`
+  },
+  {
+    id: 'side-hustle-10',
+    title: "AI-Powered Newsletters: The 1-Hour Work Week",
+    date: "2026-05-20",
+    category: "COMMISSION",
+    emoji: "📧",
+    excerpt: "Curating info is more valuable than creating it. Build a niche AI newsletter that prints ad revenue while you sleep.",
+    author: "Z-Lord",
+    featuredImage: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=2000&auto=format&fit=crop",
+    content: `
+## The Power of Curation 📧
+
+Every industry is being flooded with AI news. People are overwhelmed. They will pay (with their attention) for someone to tell them what *actually* matters.
+
+### The Blueprint
+1.  **Niche Down:** Don't do "AI News." Do "AI for Architects" or "AI for Solo-Preneur Moms."
+2.  **Automate Research:** Set up a **Perplexity** API or a simple Python script to scrape the latest news in that niche every morning.
+3.  **Synthesize:** Use **Gemini** to summarize the top 3 stories into "The Big Three" punchy takeaways.
+4.  **Monetize:** Use **Beehiiv** or **Substack** to grow your subscriber list.
+
+### The Math 💰
+*   **Newsletter Ad Rate:** ~$30-50 CPM (Cost per 1000 opens).
+*   **Total Subs:** 5,000.
+*   **Open Rate:** 50% (2,500 opens).
+*   **Revenue per Send:** $75 - $125.
+*   **Monthly Revenue (8 sends):** **$600 - $1,000**.
+
+### E-E-A-T and Growth
+The "Secret Sauce" is your unique take. Don't let the AI do 100% of the work. Let it do the *research*, but you add the *soul*. One paragraph of your own opinion at the top is what makes it a brand, not just a bot.
+
+### The Bottom Line
+Attention is the new oil. Curation is the new extraction. Start building your list today. 🚀
+`
   }
 ]
 ;
