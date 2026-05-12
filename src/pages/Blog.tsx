@@ -77,7 +77,7 @@ export const Blog = () => {
       </div>
 
       {/* Category Tabs */}
-      <div className="flex flex-wrap gap-3 mb-10 overflow-x-auto pb-4 scrollbar-hide">
+      <div className="flex flex-nowrap items-center gap-3 mb-12 overflow-x-auto pb-6 scrollbar-hide overscroll-x-contain -mx-2 px-2">
         {CATEGORIES.map(cat => (
           <button
             key={cat}

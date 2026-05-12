@@ -23,9 +23,20 @@ export const AIHub = () => {
 
   useEffect(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+      const scrollElement = scrollRef.current;
+      const scrollToBottom = () => {
+        scrollElement.scrollTo({
+          top: scrollElement.scrollHeight,
+          behavior: 'smooth'
+        });
+      };
+      
+      // Use both requestAnimationFrame and a small timeout to ensure DOM has rendered
+      requestAnimationFrame(() => {
+        setTimeout(scrollToBottom, 100);
+      });
     }
-  }, [messages]);
+  }, [messages, isLoading]);
 
   const handleSend = async () => {
     if (!input.trim() && !selectedImage) return;
@@ -106,19 +117,19 @@ export const AIHub = () => {
   };
 
   return (
-    <main className="pt-32 px-6 md:px-10 pb-20 container mx-auto h-[calc(100vh-80px)] flex flex-col">
-      <div className="mb-8 ">
-        <h1 className="text-4xl md:text-7xl font-heading font-black uppercase tracking-tighter mb-4 text-white">
+    <main className="pt-24 md:pt-32 px-4 md:px-10 pb-4 md:pb-10 container mx-auto h-[calc(100dvh-0px)] md:h-[calc(100vh-80px)] flex flex-col overflow-hidden">
+      <div className="mb-4 md:mb-8 shrink-0">
+        <h1 className="text-3xl md:text-7xl font-heading font-black uppercase tracking-tighter mb-2 md:mb-4 text-white">
           AI <span className="neon-text">Command</span> Center 🛸
         </h1>
-        <p className="text-gray-400 max-w-2xl font-body">
+        <p className="text-gray-400 max-w-2xl font-body text-xs md:text-base">
           The ultimate suite of Google Gemini tools live on your dashboard. Chat, generate, and visualize your hustle.
         </p>
       </div>
 
-      <div className="flex-grow flex flex-col md:flex-row gap-6 h-full overflow-hidden">
+      <div className="flex-grow flex flex-col md:flex-row gap-4 md:gap-6 h-full overflow-hidden min-h-0">
         {/* Sidebar Tabs */}
-        <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-x-visible pb-2 md:pb-0">
+        <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto scrollbar-hide shrink-0 pb-2 md:pb-0">
           {TAB_CONFIG.map(tab => (
             <button
               key={tab.id}
@@ -127,21 +138,21 @@ export const AIHub = () => {
                 setMessages([]);
                 setGeneratedImage(null);
               }}
-              className={`flex items-center gap-4 px-6 py-4 rounded-2xl font-black uppercase tracking-widest text-[10px] transition-all whitespace-nowrap
+              className={`flex items-center gap-4 px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-[8px] md:text-[10px] transition-all whitespace-nowrap
                 ${activeTab === tab.id 
                   ? `bg-neon-cyan text-dark-bg shadow-[0_0_20px_rgba(69,240,223,0.3)]` 
                   : 'glass text-gray-400 hover:text-white hover:bg-white/10'}`}
             >
-              <tab.icon size={16} />
+              <tab.icon size={14} className="md:w-4 md:h-4" />
               {tab.label}
             </button>
           ))}
         </div>
 
         {/* Main Interface */}
-        <div className="flex-grow flex flex-col glass rounded-3xl border border-white/5 relative overflow-hidden bg-dark-bg/40 backdrop-blur-3xl">
+        <div className="flex-grow flex flex-col glass rounded-2xl md:rounded-3xl border border-white/5 relative overflow-hidden bg-dark-bg/40 backdrop-blur-3xl min-h-0">
           {/* Messages Area */}
-          <div ref={scrollRef} className="flex-grow overflow-y-auto p-6 space-y-6 scrollbar-hide">
+          <div ref={scrollRef} className="flex-grow overflow-y-auto p-4 md:p-6 space-y-4 md:space-y-6 scrollbar-hide overscroll-contain">
             {messages.length === 0 && (
               <div className="h-full flex flex-col items-center justify-center text-center opacity-30 select-none">
                 <Brain size={80} className="mb-4 animate-pulse" />

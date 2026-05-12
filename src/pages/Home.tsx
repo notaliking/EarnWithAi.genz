@@ -77,6 +77,29 @@ export const Home = () => {
               </Link>
             </div>
           </motion.div>
+
+          {/* Scroll Indicator */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.5 }}
+            transition={{ delay: 2, duration: 1 }}
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden xl:flex flex-col items-center gap-2"
+          >
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500">Scroll Alpha</span>
+            <div className="w-1 h-12 bg-white/10 rounded-full relative overflow-hidden">
+              <motion.div 
+                animate={{ 
+                  y: [0, 48, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="absolute top-0 left-0 w-full h-1/4 bg-neon-cyan"
+              />
+            </div>
+          </motion.div>
         </div>
 
         <div className="w-full lg:w-2/5 flex flex-col gap-8 z-10">

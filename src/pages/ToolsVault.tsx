@@ -65,7 +65,7 @@ export const ToolsVault = () => {
       <div className="flex flex-col lg:flex-row gap-12">
         {/* Sidebar */}
         <aside className="lg:w-64 shrink-0">
-          <div className="sticky top-32">
+          <div className="sticky top-32 lg:max-h-[calc(100vh-160px)] lg:overflow-y-auto scrollbar-hide overscroll-contain">
             <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 mb-6 px-4">Categories</h2>
             <nav className="flex flex-col gap-2">
               {categories.map(cat => (
