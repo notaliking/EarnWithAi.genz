@@ -61,55 +61,75 @@ export const ToolsVault = () => {
         </p>
       </div>
 
-      {/* Filters */}
-      <div className="flex flex-col md:flex-row gap-6 mb-12 items-center justify-between">
-        <div className="relative w-full md:w-96 group">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-hover:text-neon-cyan transition-colors" size={18} />
-          <input 
-            type="text" 
-            placeholder="Search the vault..." 
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full glass bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-6 outline-none focus:border-neon-cyan focus:shadow-neon transition-all text-white font-bold"
-          />
-        </div>
-        
-        <div className="flex gap-2 overflow-x-auto w-full md:w-auto pb-4 md:pb-0 scrollbar-hide">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setCategory(cat)}
-              className={`px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap border-none cursor-pointer ${
-                category === cat 
-                ? 'bg-neon-cyan text-dark-bg shadow-neon' 
-                : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+      {/* Main Content Area with Sidebar */}
+      <div className="flex flex-col lg:flex-row gap-12">
+        {/* Sidebar */}
+        <aside className="lg:w-64 shrink-0">
+          <div className="sticky top-32">
+            <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 mb-6 px-4">Categories</h2>
+            <nav className="flex flex-col gap-2">
+              {categories.map(cat => (
+                <button
+                  key={cat}
+                  onClick={() => setCategory(cat)}
+                  className={`flex items-center justify-between px-6 py-4 rounded-2xl text-[11px] font-black uppercase tracking-widest transition-all border-none cursor-pointer text-left w-full ${
+                    category === cat 
+                    ? 'bg-neon-cyan text-dark-bg shadow-neon' 
+                    : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
+                  }`}
+                >
+                  {cat}
+                  {category === cat && <motion.div layoutId="active-cat" className="w-1.5 h-1.5 rounded-full bg-dark-bg" />}
+                </button>
+              ))}
+            </nav>
+
+            <div className="mt-12 p-6 glass rounded-3xl border-neon-pink/20 bg-gradient-to-br from-neon-pink/10 to-transparent hidden lg:block">
+              <h3 className="text-white font-black uppercase tracking-tighter text-sm mb-3 italic">Alpha Tip 💡</h3>
+              <p className="text-gray-400 text-[10px] leading-relaxed">
+                Most pro users combine 3+ tools from the vault to build fully automated income streams.
+              </p>
+            </div>
+          </div>
+        </aside>
+
+        {/* Content */}
+        <div className="flex-grow">
+          {/* Search Bar */}
+          <div className="mb-10 flex flex-col md:flex-row gap-6 items-center justify-between">
+            <div className="relative w-full group">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-hover:text-neon-cyan transition-colors" size={18} />
+              <input 
+                type="text" 
+                placeholder="Search the vault for specific alpha..." 
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full glass bg-white/5 border border-white/10 rounded-2xl py-5 pl-12 pr-6 outline-none focus:border-neon-cyan focus:shadow-neon transition-all text-white font-bold text-sm"
+              />
+            </div>
+          </div>
+
+          {/* Grid */}
+          <motion.div 
+            layout
+            className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6"
+          >
+            <AnimatePresence mode="popLayout">
+              {filteredTools.map(tool => (
+                <ToolCard key={tool.id} tool={tool} />
+              ))}
+            </AnimatePresence>
+          </motion.div>
+
+          {filteredTools.length === 0 && (
+            <div className="text-center py-32 glass rounded-[40px] border-dashed border-white/20">
+              <div className="text-6xl mb-6 opacity-20">💀</div>
+              <h3 className="text-xl font-heading font-bold text-gray-500">No Alpha found in this sector.</h3>
+              <p className="text-gray-600 mt-2 text-sm">Try a different search or category.</p>
+            </div>
+          )}
         </div>
       </div>
-
-      {/* Grid */}
-      <motion.div 
-        layout
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
-      >
-        <AnimatePresence mode="popLayout">
-          {filteredTools.map(tool => (
-            <ToolCard key={tool.id} tool={tool} />
-          ))}
-        </AnimatePresence>
-      </motion.div>
-
-      {filteredTools.length === 0 && (
-        <div className="text-center py-40 glass rounded-[40px] border-dashed border-white/20">
-          <div className="text-6xl mb-6 truncate opacity-20">💀</div>
-          <h3 className="text-2xl font-heading font-bold text-gray-500">No Alpha found in this sector.</h3>
-          <p className="text-gray-600 mt-2">Try a different search or category.</p>
-        </div>
-      )}
     </main>
   );
 };
