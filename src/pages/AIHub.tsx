@@ -47,17 +47,27 @@ export const AIHub = () => {
     setIsLoading(true);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      const apiKey = process.env.GEMINI_API_KEY;
+      
+      // We check for the raw value to see if injection happened
+      if (!apiKey || apiKey === 'undefined' || apiKey === 'MY_GEMINI_API_KEY' || apiKey === '') {
+        console.error("API Key Check Failed. Current value:", apiKey);
+        throw new Error('API_KEY_MISSING');
+      }
+
+      const ai = new GoogleGenAI({ apiKey });
       
       let prompt = input;
       if (activeTab === 'ideas') {
         prompt = `Generate 3 specific, high-profit AI business ideas based on this context: ${input}. Each idea should include: 1. The concept 2. The target audience 3. How to monetize it using free AI tools.`;
       }
 
+      const textModel = "gemini-3-flash-preview";
+
       if (activeTab === 'vision' && selectedImage) {
         const base64Data = selectedImage.split(',')[1];
         const response = await ai.models.generateContent({
-          model: "gemini-flash-latest",
+          model: textModel,
           contents: {
             parts: [
               { inlineData: { mimeType: "image/jpeg", data: base64Data } },
@@ -88,7 +98,7 @@ export const AIHub = () => {
         }
       } else {
         const response = await ai.models.generateContent({
-          model: "gemini-flash-latest",
+          model: textModel,
           contents: prompt,
           config: {
             systemInstruction: "You are EarnWithAI.genz's lead AI strategist. Your tone is bold, helpful, and highly focused on monetization and efficiency for Gen Z entrepreneurs. Keep answers concise but packed with value.",
@@ -100,10 +110,12 @@ export const AIHub = () => {
       console.error("Gemini AI Error:", error);
       let errorMsg = "Matrix Error: Check your connection or API limit.";
       
-      if (error?.message?.includes('403') || error?.message?.includes('PERMISSION_DENIED') || error?.message?.includes('API_KEY_INVALID')) {
-        errorMsg = "Matrix Access Denied: Please verify your Gemini API key in Settings > Secrets.";
+      if (error?.message === 'API_KEY_MISSING' || error?.message?.includes('403') || error?.message?.includes('PERMISSION_DENIED') || error?.message?.includes('API_KEY_INVALID')) {
+        errorMsg = "Matrix Access Denied: Please verify your Gemini API key in Settings > Secrets. Shared apps may require you to provide your own key.";
       } else if (error?.message?.includes('429') || error?.message?.includes('RESOURCE_EXHAUSTED')) {
         errorMsg = "API Limit Reached: The grid is overloaded. Try again in a minute or check your quota.";
+      } else if (error?.name === 'ReferenceError' && error?.message?.includes('process')) {
+        errorMsg = "Configuration Error: API access logic mismatch. The team is on it.";
       }
       
       setMessages(prev => [...prev, { role: 'ai', text: errorMsg }]);
