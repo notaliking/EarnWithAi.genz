@@ -79,3 +79,7 @@
   @apply text-white font-bold;
 }
 
+.markdown-body img {
+  @apply rounded-3xl my-10 border border-white/10 w-full object-cover shadow-2xl;
+}
+

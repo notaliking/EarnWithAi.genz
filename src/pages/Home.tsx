@@ -9,14 +9,23 @@ const BlogCard = ({ post }: { post: Post }) => (
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="glass rounded-3xl overflow-hidden hover:scale-[1.02] transition-transform group"
+    className="glass rounded-3xl overflow-hidden hover:scale-[1.02] transition-transform group flex flex-col h-full shadow-lg border border-white/5"
   >
-    <Link to={`/blog/${post.id}`} className="no-underline">
-      <div className="h-48 bg-white/5 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-500 bg-gradient-to-br from-white/5 to-white/0">
-        {post.emoji}
+    <Link to={`/blog/${post.id}`} className="no-underline flex flex-col h-full">
+      <div className="h-56 overflow-hidden relative">
+        <img 
+          src={post.featuredImage} 
+          alt={post.title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/80 via-transparent to-transparent opacity-60"></div>
+        <div className="absolute top-4 left-4 bg-dark-bg/40 backdrop-blur-md px-3 py-2 rounded-xl text-2xl">
+          {post.emoji}
+        </div>
       </div>
-      <div className="p-6">
-        <span className="text-xs font-bold uppercase tracking-widest text-neon-cyan mb-2 block">{post.category}</span>
+      <div className="p-6 flex flex-col flex-grow">
+        <span className="text-[10px] font-black uppercase tracking-widest text-neon-cyan mb-3 block">{post.category}</span>
         <h3 className="text-2xl font-heading font-bold mb-4 group-hover:text-neon-cyan transition-colors text-white">
           {post.title}
         </h3>
@@ -76,23 +85,35 @@ export const Home = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-white/5 border border-white/10 rounded-[40px] p-8 backdrop-blur-3xl relative overflow-hidden group cursor-pointer"
+              className="bg-white/5 border border-white/10 rounded-[40px] p-8 backdrop-blur-3xl relative overflow-hidden group cursor-pointer h-full min-h-[400px] flex flex-col justify-end"
             >
-              <div className="absolute top-0 right-0 p-6">
-                <span className="bg-neon-pink text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-neon-pink animate-pulse border-none">Featured Alpha</span>
+              {/* Background Featured Image */}
+              <div className="absolute inset-0 z-0">
+                <img 
+                  src={featuredPost.featuredImage} 
+                  alt={featuredPost.title}
+                  className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-700 group-hover:scale-105 transform"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/40 to-transparent"></div>
               </div>
-              <div className="text-8xl mb-8 group-hover:scale-110 transition-transform duration-700 ease-out">{featuredPost.emoji}</div>
-              <span className="text-neon-cyan font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Side Hustle Discovery</span>
-              <h3 className="text-3xl font-heading font-bold mt-2 mb-4 leading-tight group-hover:text-neon-cyan transition-colors text-white">
-                {featuredPost.title}
-              </h3>
-              <p className="text-gray-400 text-base mb-8 leading-relaxed">
-                {featuredPost.excerpt}
-              </p>
-              <div className="inline-flex items-center text-neon-pink font-black gap-3 group-hover:gap-5 transition-all uppercase tracking-widest text-xs">
-                UNLOCK THE STRATEGY <ArrowRight size={18} />
+
+              <div className="relative z-10">
+                <div className="mb-6">
+                  <span className="bg-neon-pink text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-neon-pink">Featured Alpha</span>
+                </div>
+                <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-700 ease-out inline-block">{featuredPost.emoji}</div>
+                <span className="text-neon-cyan font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Side Hustle Discovery</span>
+                <h3 className="text-3xl font-heading font-bold mt-2 mb-4 leading-tight group-hover:text-neon-cyan transition-colors text-white">
+                  {featuredPost.title}
+                </h3>
+                <p className="text-gray-400 text-base mb-8 leading-relaxed line-clamp-2">
+                  {featuredPost.excerpt}
+                </p>
+                <div className="inline-flex items-center text-neon-pink font-black gap-3 group-hover:gap-5 transition-all uppercase tracking-widest text-xs">
+                  UNLOCK THE STRATEGY <ArrowRight size={18} />
+                </div>
               </div>
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-neon-pink/10 blur-3xl rounded-full"></div>
             </motion.div>
           </Link>
 

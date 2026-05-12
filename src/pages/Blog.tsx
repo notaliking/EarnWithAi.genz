@@ -9,14 +9,23 @@ const BlogCard = ({ post }: { post: Post }) => (
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="glass rounded-3xl overflow-hidden hover:scale-[1.02] transition-transform group"
+    className="glass rounded-3xl overflow-hidden hover:scale-[1.02] transition-transform group flex flex-col h-full shadow-lg border border-white/5"
   >
-    <Link to={`/blog/${post.id}`} className="no-underline">
-      <div className="h-48 bg-white/5 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-500 bg-gradient-to-br from-white/5 to-white/0">
-        {post.emoji}
+    <Link to={`/blog/${post.id}`} className="no-underline flex flex-col h-full">
+      <div className="h-56 overflow-hidden relative">
+        <img 
+          src={post.featuredImage} 
+          alt={post.title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/80 via-transparent to-transparent opacity-60"></div>
+        <div className={`absolute top-4 left-4 bg-dark-bg/40 backdrop-blur-md px-3 py-2 rounded-xl text-2xl`}>
+          {post.emoji}
+        </div>
       </div>
-      <div className="p-6">
-        <span className="text-xs font-bold uppercase tracking-widest text-neon-cyan mb-2 block">{post.category}</span>
+      <div className="p-6 flex flex-col flex-grow">
+        <span className="text-[10px] font-black uppercase tracking-widest text-neon-cyan mb-3 block">{post.category}</span>
         <h3 className="text-2xl font-heading font-bold mb-4 group-hover:text-neon-cyan transition-colors text-white">
           {post.title}
         </h3>

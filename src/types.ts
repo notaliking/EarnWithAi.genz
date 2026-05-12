@@ -6,6 +6,8 @@ export interface Post {
   emoji: string;
   excerpt: string;
   author: string;
+  authorProfile?: string;
+  featuredImage: string;
   content: string;
 }
 
