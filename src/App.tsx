@@ -9,6 +9,7 @@ import { Article } from './pages/Article.tsx';
 import { Blog } from './pages/Blog.tsx';
 import { About } from './pages/About.tsx';
 import { AIHub } from './pages/AIHub.tsx';
+import { ToolArticle } from './pages/ToolArticle.tsx';
 
 /**
  * @license
@@ -44,6 +45,7 @@ export default function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<About />} />
           <Route path="/tools" element={<ToolsVault />} />
+          <Route path="/tools/:id" element={<ToolArticle />} />
           <Route path="/ai-hub" element={<AIHub />} />
           <Route path="/blog/:id" element={<Article />} />
         </Routes>

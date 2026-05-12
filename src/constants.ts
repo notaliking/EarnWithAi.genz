@@ -15,55 +15,135 @@ export const TOOLS: Tool[] = [
     id: 'midjourney', 
     name: 'Midjourney', 
     category: 'Image Gen', 
-    description: 'The gold standard for high-fidelity artistic AI. Features unrivaled aesthetic control and lighting. Perfect for creating high-ticket digital art, luxury website assets, and massive niche texture packs for the game dev market.', 
+    description: 'The gold standard for high-fidelity artistic AI. Features unrivaled aesthetic control and lighting.', 
     link: 'https://midjourney.com', 
     hasAffiliate: false, 
-    emoji: '🎨' 
+    emoji: '🎨',
+    content: `
+## The Artistic Powerhouse 🎨
+
+Midjourney is not just an image generator; it's a digital artist in a box. In 2026, it remains the top choice for creators who need "Aesthetic Alpha."
+
+### Why it Wins:
+*   **Aesthetic Quality:** No other model captures lighting, texture, and composition quite like Midjourney.
+*   **Version Control:** Easily switch between versions (v6, v5.2, etc.) to get the specific "vibe" you want.
+*   **Parameter Depth:** Use commands like \`--ar\`, \`--stylize\`, and \`--chaos\` to fine-tune the randomness.
+
+### How to Monetize:
+1.  **High-Ticket Assets:** Sell custom textures for game developers on the Unity or Unreal marketplaces.
+2.  **Branding Packages:** Create unique, high-end logos and brand patterns for startups that are tired of generic stock photos.
+3.  **Digital Art Prints:** Launch an Etsy shop featuring hyper-realistic or abstract AI art (be sure to add your own human touch!).
+
+### Pro Alpha:
+Use the \`/describe\` command. Upload an image you like, and Midjourney will give you 4 prompts that match its style. This is the fastest way to learn how to prompt like a god. 🚀
+`
   },
   { 
     id: 'dalle3', 
     name: 'DALL-E 3', 
     category: 'Image Gen', 
-    description: 'Integrated directly into ChatGPT for seamless workflow. Known for incredible prompt adherence. Use it to generate precise, brand-aligned social media graphics and custom illustrations for high-conversion landing pages.', 
+    description: 'Integrated directly into ChatGPT for seamless workflow. Known for incredible prompt adherence.', 
     link: 'https://openai.com/dall-e-3', 
     hasAffiliate: false, 
-    emoji: '🖼️' 
+    emoji: '🖼️',
+    content: `
+## Precision Meets Logic 🖼️
+
+DALL-E 3, powered by OpenAI, is the smartest image model when it comes to following instructions. If you ask for a "purple squirrel holding a sign that says 'Hustle Harder'", it will get the text right 99% of the time.
+
+### The ChatGPT Advantage:
+*   **Conversational Editing:** You don't need to write long prompts. Just tell ChatGPT what you want, and it will expand the prompt for you.
+*   **In-Painting:** Recently added features allow you to select a part of the image and change just that section.
+
+### The Hustle:
+*   **Social Media Management:** Generate consistent, brand-aligned graphics for clients in seconds.
+*   **Storyboarding:** Help film or ad agencies visualize scenes instantly without hiring a storyboard artist.
+*   **Sticker Design:** DALL-E 3 is amazing at creating clean, centered objects perfect for sticker businesses.
+
+### Pro Alpha:
+If the image isn't perfect, don't restart. Use the selection tool and describe the change. It's the ultimate "Iterative Design" tool. 🚀
+`
   },
   { 
     id: 'flux', 
     name: 'Flux.1', 
     category: 'Image Gen', 
-    description: 'The open-source king that handles text rendering perfectly. Essential for Gen-Z entrepreneurs in the Print-on-Demand (POD) space—design hyper-realistic clothing mockups and posters with readable text in seconds.', 
+    description: 'The open-source king that handles text rendering perfectly. Essential for Print-on-Demand.', 
     link: 'https://blackforestlabs.ai', 
     hasAffiliate: false, 
-    emoji: '🔥' 
+    emoji: '🔥',
+    content: `
+## The New King of Realism 🔥
+
+FLUX.1 is the latest disruptor from Black Forest Labs. It has taken the AI world by storm because of its incredible realism and perfect text rendering.
+
+### Why Gen-Z Loves Flux:
+1.  **Human Anatomy:** It handles hands and fingers better than almost any other model.
+2.  **Hyper-Realism:** Its "Dev" and "Schnell" versions create images that look like real photography, not "AI Plastic."
+3.  **Open Weights:** Because it's open-source, developers are building custom versions (LoRAs) for everything from anime to architectural photography.
+
+### The Monetization Play:
+*   **POD (Print on Demand):** Create t-shirt designs with readable text that actually looks like a professional graphic designer made it.
+*   **Stock Photography:** Generate hyper-realistic "lifestyle" photos and sell them on premium stock sites.
+*   **Influencer Marketing:** Build a "Faceless AI Influencer" with consistent features across different outfits and backgrounds.
+
+### Pro Alpha:
+Run Flux on **Fal.ai** or **Replicate** for the fastest speeds, or run it locally if you have a beefy GPU to save on costs. 🚀
+`
   },
   { 
     id: 'canva', 
     name: 'Canva Magic Studio', 
     category: 'Design', 
-    description: 'The ultimate rapid-design suite. Features AI background removal, magic resize, and brand-voice generators. Use it to dominate TikTok and Instagram by templating and scaling months of content in a single afternoon.', 
+    description: 'The ultimate rapid-design suite. Features AI background removal, magic resize, and brand-voice generators.', 
     link: 'https://canva.com', 
     hasAffiliate: true, 
-    emoji: '✨' 
+    emoji: '✨',
+    content: `
+## Design at Scale ✨
+
+Canva Magic Studio is the Swiss Army knife for researchers, marketers, and social media managers who need to produce high-volume content without a design degree.
+
+### Key Tools:
+*   **Magic Media:** Generate images and videos directly in your layout.
+*   **Magic Switch:** Turn a presentation into a blog post or a summary into a set of social media graphics in one click.
+*   **Magic Eraser:** Remove unwanted objects from photos instantly.
+
+### The Hustle:
+1.  **Social Media Agency:** Manage 10+ clients by using Canva's batch-create tool with a CSV upload.
+2.  **Slide Decks:** charge $500+ for professional pitch decks that you layout in minutes.
+3.  **YouTube Thumbnail Service:** create high-clickrate thumbnails using their massive library of AI assets and text effects.
+
+### Pro Alpha:
+Use the "Bulk Create" feature. Upload a CSV of your TikTok captions, and Canva will generate 50 separate videos for you in seconds. 🚀
+`
   },
   { 
     id: 'magnific', 
     name: 'Magnific AI', 
     category: 'Image Gen', 
-    description: 'A pro-level image upscaler that adds "hallucinated" detail for extreme clarity. Use it to turn standard AI-generated concepts into high-resolution 4K assets that sell for premium prices to design agencies.', 
+    description: 'A pro-level image upscaler that adds "hallucinated" detail for extreme clarity.', 
     link: 'https://magnific.ai', 
     hasAffiliate: true, 
-    emoji: '🔬' 
-  },
-  { 
-    id: 'adobefirefly', 
-    name: 'Adobe Firefly', 
-    category: 'Design', 
-    description: 'Ethical AI generation trained on licensed content. Features Generative Fill within Photoshop. Key for high-end professional client work where copyright safety and pixel-perfect editing are non-negotiable.', 
-    link: 'https://adobe.com/firefly', 
-    hasAffiliate: true, 
-    emoji: '🖌️' 
+    emoji: '🔬',
+    content: `
+## The Clarity Engine 🔬
+
+Magnific AI isn't just an upscaler. It is a "Creative Upscaler." It uses AI to add textures, pores, and details that weren't in the original image.
+
+### Why It's Premium:
+*   **Hallucination Control:** You decide how much "new" detail the AI adds.
+*   **Texture Mastery:** It can turn a flat 2D render into a piece of hyper-realistic 3D art.
+*   **Scale:** upscale your images for billboards, high-end magazines, or massive 4K website headers.
+
+### The Niche:
+*   **Architectural Visualization:** Turn basic 3D renders into photorealistic luxury penthouse shots.
+*   **Fashion Design:** upscale fabric textures for digital fashion shows.
+*   **Restoration:** take old, blurry photos and bring them back to life in 4K.
+
+### Pro Alpha:
+Use it as the "Last Step" in your workflow. Generate in Midjourney -> Edit in Photoshop -> Final Polish in Magnific. 🚀
+`
   },
 
   // --- VIDEO & ANIMATION ---
@@ -71,158 +151,138 @@ export const TOOLS: Tool[] = [
     id: 'luma-dream', 
     name: 'Luma Dream Machine', 
     category: 'Video', 
-    description: 'Stunningly realistic video generation using text or start/end frames. Perfect for producing cinematic B-roll for YouTube documentaries or high-aesthetic backgrounds for faceless TikTok channels.', 
+    description: 'Stunningly realistic video generation using text or start/end frames.', 
     link: 'https://lumalabs.ai/dream-machine', 
     hasAffiliate: false, 
-    emoji: '🎥' 
-  },
-  { 
-    id: 'runway-gen3', 
-    name: 'Runway Gen-3 Alpha', 
-    category: 'Video', 
-    description: 'The industry leader in cinematic AI video with advanced camera control. Use it to build an "AI Filmmaking" portfolio or provide high-end motion graphics for tech-forward startup brands.', 
-    link: 'https://runwayml.com', 
-    hasAffiliate: false, 
-    emoji: '🎬' 
-  },
-  { 
-    id: 'kling', 
-    name: 'Kling AI', 
-    category: 'Video', 
-    description: 'Known for incredibly long (up to 10s-2min) and stable video generations. Best for visual storytelling, complex animations, and any project that needs consistent motion without "hallucination" drifts.', 
-    link: 'https://klingai.com', 
-    hasAffiliate: false, 
-    emoji: '👾' 
+    emoji: '🎥',
+    content: `
+## The Dream of Motion 🎥
+
+Luma Dream Machine is a highly stable video model that allows for cinematic quality from simple text prompts.
+
+### Top Capabilities:
+*   **Character Consistency:** It's excellent at keeping a face the same throughout a clip.
+*   **Slow Motion:** natively supports high-frame-rate looks for dramatic effect.
+*   **End-to-End:** use an image as the start frame and another as the end frame for perfect transitions.
+
+### The Revenue Path:
+*   **Faceless YouTube Channels:** generate high-end B-roll for historical or documentary channels.
+*   **Intro & Outro Creation:** sell custom logo animations to other creators.
+*   **Social Ads:** create 5-second "Scroll-Stopping" ads for dropshipping products.
+
+### Pro Alpha:
+Upload a screenshot from a movie you like as a "Style Reference" to get that specific cinematic lighting. 🚀
+`
   },
   { 
     id: 'heygen', 
     name: 'HeyGen', 
     category: 'Video', 
-    description: 'Faceless channel king. Create hyper-realistic avatars that speak multiple languages. Use it to build "Digital Influencers" or translate your content to global audiences without re-filming a single second.', 
+    description: 'AI video avatars that look and speak like real people. Perfect for tutorials and sales.', 
     link: 'https://heygen.com', 
     hasAffiliate: true, 
-    emoji: '👤' 
-  },
-  { 
-    id: 'invideo', 
-    name: 'InVideo AI', 
-    category: 'Video', 
-    description: 'The speed-runner for video content. Features an AI-powered co-pilot that turns prompts into full, edited videos with stock footage. Use it to test 10 different niche channel ideas in 24 hours.', 
-    link: 'https://invideo.io', 
-    hasAffiliate: true, 
-    emoji: '📼' 
-  },
-  { 
-    id: 'pika', 
-    name: 'Pika Labs', 
-    category: 'Video', 
-    description: 'Creative animation tool with a distinct, trendy aesthetic. Features Lip-Sync and specialized motion effects. Perfect for high-energy Gen-Z edits and experimental social media clips that need to stop the scroll.', 
-    link: 'https://pika.art', 
-    hasAffiliate: false, 
-    emoji: '🐦' 
+    emoji: '👤',
+    content: `
+## The Virtual Spokesperson 👤
+
+HeyGen is the undisputed leader in AI avatars. You provide the script, and they provide a high-resolution "Talking Head" video.
+
+### Top Features:
+*   **Custom Avatars:** Create a digital version of yourself that can speak 50+ languages.
+*   **Streaming Avatars:** Real-time AI characters for websites and customer support.
+*   **Video Translation:** Upload a video of yourself, and HeyGen will make you speak a different language while perfectly syncing your lips.
+
+### The Business Play:
+*   **Corporate Training:** help companies turn boring PDF manuals into engaging video courses.
+*   **Personalization:** Create 100 different sales videos for 100 different clients, each addressing the client by their name.
+*   **TikTok Explainer Creator:** use an AI avatar to narrate trending news or niche deep-dives.
+
+### Pro Alpha:
+Combine HeyGen with **ChatGPT** for the script and **ElevenLabs** for the custom voice to build the ultimate "AI Influencer" stack. 🚀
+`
   },
 
-  // --- WRITING & SEO ---
+  // --- WRITING & LLMs ---
   { 
     id: 'claude', 
     name: 'Claude 3.5 Sonnet', 
     category: 'Writing', 
-    description: 'Features superior logic and a human-like tone. Best for ghostwriting high-authority LinkedIn posts, drafting 2,000+ word deep-dives, and complex problem-solving that requires nuanced reasoning.', 
+    description: 'Features superior logic and a human-like tone. Best for coding and creative writing.', 
     link: 'https://anthropic.com', 
     hasAffiliate: false, 
-    emoji: '🧠' 
-  },
-  { 
-    id: 'gemini', 
-    name: 'Gemini 1.5 Pro', 
-    category: 'Writing', 
-    description: 'Massive 2M+ context window. Use it to analyze entire competitive landscapes, summarize 1,000-page PDF reports, or debug massive codebases in seconds. The ultimate "Big Data" sidekick for high-level research.', 
-    link: 'https://gemini.google.com', 
-    hasAffiliate: false, 
-    emoji: '💎' 
+    emoji: '🧠',
+    content: `
+## The Creative Architect 🧠
+
+Claude 3.5 Sonnet from Anthropic has become the "Logic King." It is widely considered better than GPT-4o for complex coding and "Human-like" writing.
+
+### The Artifacts Edge:
+*   **Live Preview:** When Claude writes code (React, HTML, etc.), you can see it run in a window right next to the chat.
+*   **Nuanced Writing:** It avoids the "AI clichés" that plague ChatGPT. It sounds like a real, smart human.
+*   **Huge Context:** upload entire PDFs, books, or codebases, and ask complex questions about them.
+
+### How to Hustle:
+1.  **AI Ghostwriting:** Write better threads, newsletters, and scripts that don't sound like a bot.
+2.  **App Prototyping:** use Artifacts to build a working prototype of a SaaS in 30 minutes to show investors.
+3.  **Data Analysis:** upload complex spreadsheets and ask Claude to find the "Hidden Trends" and growth opportunities.
+
+### Pro Alpha:
+Ask Claude to "Steel-man" an argument or "Red Team" your business idea. Its reasoning is world-class. 🚀
+`
   },
   { 
     id: 'chatgpt', 
     name: 'ChatGPT-4o', 
     category: 'Writing', 
-    description: 'The ultimate general-purpose AI co-pilot. Features real-time voice, web search, and image analysis. Ideal for daily brainstorming, rapid coding help, and managing small-biz operations with a single app.', 
+    description: 'The ultimate general-purpose AI co-pilot. Features real-time voice and web search.', 
     link: 'https://chatgpt.com', 
     hasAffiliate: false, 
-    emoji: '🤖' 
-  },
-  { 
-    id: 'jasper', 
-    name: 'Jasper', 
-    category: 'Marketing', 
-    description: 'Enterprise-grade AI built for direct-response marketing. Features performance-tracking and brand-voice consistency. Use it to run a high-ticket copywriting agency with scale and precision.', 
-    link: 'https://jasper.ai', 
-    hasAffiliate: true, 
-    emoji: '📈' 
-  },
-  { 
-    id: 'copy-ai', 
-    name: 'Copy.ai', 
-    category: 'Marketing', 
-    description: 'Automates repetitive marketing tasks and large-scale growth workflows. Best for GTM teams and agencies that need to generate 100+ variations of ad copy or SEO metadata without sacrificing quality.', 
-    link: 'https://copy.ai', 
-    hasAffiliate: true, 
-    emoji: '✍️' 
-  },
-  { 
-    id: 'surfer-seo', 
-    name: 'Surfer SEO', 
-    category: 'SEO', 
-    description: 'Analyze competitors and optimize content using real-time data. Essential for Gen-Z SEOs aiming to rank niche authority sites and guarantee high-commission affiliate traffic from Google.', 
-    link: 'https://surferseo.com', 
-    hasAffiliate: true, 
-    emoji: '🌐' 
-  },
+    emoji: '🤖',
+    content: `
+## The Global Standard 🤖
 
-  // --- AUTOMATION & HUSTLE ---
-  { 
-    id: 'make', 
-    name: 'Make.com', 
-    category: 'Automation', 
-    description: 'The "Lego for the Internet." Build complex, multi-step automated income systems by connecting 1,000+ apps. Use it to run a "one-person empire" where bots handle every task from lead gen to fulfillment.', 
-    link: 'https://make.com', 
-    hasAffiliate: true, 
-    emoji: '⚙️' 
-  },
-  { 
-    id: 'zapier', 
-    name: 'Zapier Central', 
-    category: 'Automation', 
-    description: 'Connect standard business apps to powerful AI agents. Features "Central" for teaching bots custom workflows. Perfect for selling high-end "AI Business Audits" to local non-tech businesses for high retainers.', 
-    link: 'https://zapier.com', 
-    hasAffiliate: true, 
-    emoji: '⚡' 
+ChatGPT is the daily driver for millions. With GPT-4o, it's faster, smarter, and can "see" and "hear" through your phone's camera.
+
+### Core Features:
+*   **Voice Mode:** Talk to the AI in real-time with zero latency.
+*   **Vision:** Show it a picture of a broken car part or a math problem, and it will explain the fix.
+*   **Custom GPTs:** build your own specialized bot for your specific business tasks.
+
+### The Alpha Hustle:
+*   **Customer Support Bots:** build a Custom GPT trained on your business data to handle FAQs.
+*   **Market Analysis:** use the "Browse" feature to find the latest trends on X and LinkedIn.
+*   **Coding Assistant:** still the best generalist for quick scripts and debugging.
+
+### Pro Alpha:
+Use the "Memory" feature to teach ChatGPT your preferences once, so you never have to repeat your brand guidelines again. 🚀
+`
   },
   { 
     id: 'perplexity', 
     name: 'Perplexity Pro', 
     category: 'Research', 
-    description: 'The fastest path to verified information. Cites sources in real-time. Use it for high-speed research for your AI newsletter, checking facts for YouTube scripts, or analyzing trending tech in seconds.', 
+    description: 'The fastest path to verified information. Answers your questions with real-time citations.', 
     link: 'https://perplexity.ai', 
     hasAffiliate: true, 
-    emoji: '🔍' 
-  },
-  { 
-    id: 'gumroad', 
-    name: 'Gumroad', 
-    category: 'Selling', 
-    description: 'The simplest platform to sell digital assets—from custom AI prompt guides to complex Notion hubs. High conversion rates and zero friction for Gen-Z creators building their first digital product store.', 
-    link: 'https://gumroad.com', 
-    hasAffiliate: false, 
-    emoji: '💰' 
-  },
-  { 
-    id: 'beehiiv', 
-    name: 'beehiiv', 
-    category: 'Newsletter', 
-    description: 'Built by the team that grew Morning Brew. Features internal ad networks and boost programs. Essential for turning local niche expertise into a recurring, AI-curated cash-flow machine.', 
-    link: 'https://beehiiv.com', 
-    hasAffiliate: true, 
-    emoji: '🐝' 
+    emoji: '🔍',
+    content: `
+## The Google Killer 🔍
+
+Perplexity is what happens when Search meets Logic. Instead of a list of blue links, it gives you a synthesized answer with citations to every source.
+
+### Why it's Essential:
+1.  **Accuracy:** You can verify every claim by clicking the small numbers next to the text.
+2.  **Pro Mode:** Uses GPT-4o or Claude 3 to ask clarifying questions before searching, ensuring you get exactly what you need.
+3.  **Pages:** turn your research into a beautiful, shareable article with one click.
+
+### Use Cases for Founders:
+*   **Market Research:** find out who your competitors are and what their pricing is in seconds.
+*   **Content Strategy:** find trending topics and the data to back up your claims.
+*   **Coding Help:** It's excellent at finding the official documentation for obscure libraries.
+
+### Pro Alpha:
+Set your "Focus" to **Social** to see what people are saying on X/Reddit, or to **Academic** to search peer-reviewed papers. 🚀
+`
   },
 
   // --- AUDIO & VOICE ---
@@ -230,181 +290,85 @@ export const TOOLS: Tool[] = [
     id: 'elevenlabs', 
     name: 'ElevenLabs', 
     category: 'Audio', 
-    description: 'The world leader in AI voice synthesis. Features voice cloning and speech-to-speech. Use it to create high-retention TikTok narrations, professional-grade audiobooks, or custom voiceovers for faceless YouTube brands.', 
+    description: 'The world leader in realistic AI voice cloning and generation.', 
     link: 'https://elevenlabs.io', 
     hasAffiliate: true, 
-    emoji: '🎙️' 
-  },
-  { 
-    id: 'suno', 
-    name: 'Suno AI', 
-    category: 'Audio', 
-    description: 'Generate full, radio-ready songs in any style with just a prompt. Use it to create viral background beats, novelty hits for TikTok challenges, or original soundtracks for your faceless video empire.', 
-    link: 'https://suno.com', 
-    hasAffiliate: false, 
-    emoji: '🎵' 
-  },
-  { 
-    id: 'udio', 
-    name: 'Udio', 
-    category: 'Audio', 
-    description: 'Unmatched musical fidelity for high-end production. Features professional vocals and intricate instrumentals. Perfect for high-fidelity soundtracking and projects that need a distinct, radio-quality vibe.', 
-    link: 'https://udio.com', 
-    hasAffiliate: false, 
-    emoji: '🎹' 
-  },
-  { 
-    id: 'riverside', 
-    name: 'Riverside.fm', 
-    category: 'Audio', 
-    description: 'Professional remote recording with AI-powered audio mastering. Essential for Gen-Z "Digital Nomad" podcasters who want to capture studio-quality audio from guests anywhere in the world on a budget.', 
-    link: 'https://riverside.fm', 
-    hasAffiliate: true, 
-    emoji: '🎤' 
+    emoji: '🎙️',
+    content: `
+## The Voice of the Machine 🎙️
+
+ElevenLabs has solved the "Uncanny Valley" for audio. Their models capture emotion, breath, and nuance that make AI voices indistinguishable from humans.
+
+### Key Tools:
+*   **Voice Cloning:** Upload 60 seconds of your voice and have the AI speak for you.
+*   **Speech-to-Speech:** Upload a recording of you speaking, and the AI will change your voice while keeping your exact emotion and timing.
+*   **Sound Effects:** Generate realistic sounds just by describing them.
+
+### How to Earn:
+1.  **Faceless YouTube Channels:** Stop hiring expensive voice actors. Use ElevenLabs to narrate your videos for a fraction of the cost.
+2.  **Audiobook Production:** Offer narration services to indie authors.
+3.  **AI Phone Agents:** Use their API to build custom customer service bots for small businesses.
+
+### Pro Alpha:
+Use the "Stability" and "Clarity" sliders to find the perfect balance. Higher stability is better for audiobooks; lower stability is better for "Emotional" character voices. 🚀
+`
   },
 
-  // --- BUSINESS & PRODUCTIVITY ---
-  { 
-    id: 'notion', 
-    name: 'Notion AI', 
-    category: 'Productivity', 
-    description: 'Your second brain, supercharged. Use AI to draft meeting notes, organize complex hustle databases, and summarize dense content within your centralized personal workspace.', 
-    link: 'https://notion.so', 
-    hasAffiliate: true, 
-    emoji: '📝' 
-  },
-  { 
-    id: 'gamma', 
-    name: 'Gamma', 
-    category: 'Design', 
-    description: 'The "Anti-PowerPoint." Generate high-aesthetic presentations and mini-sites in 30 seconds. Use it to crush pitch meetings, send gorgeous proposals to clients, and build landing pages that actually convert.', 
-    link: 'https://gamma.app', 
-    hasAffiliate: true, 
-    emoji: '🪄' 
-  },
-  { 
-    id: 'tome', 
-    name: 'Tome', 
-    category: 'Design', 
-    description: 'Visual-first generative storytelling for narrative-driven pitch decks and high-end visual concepts. Perfect for creative directors and designers building high-concept project proposals.', 
-    link: 'https://tome.app', 
-    hasAffiliate: false, 
-    emoji: '📖' 
-  },
-  { 
-    id: 'fireflies', 
-    name: 'Fireflies.ai', 
-    category: 'Productivity', 
-    description: 'Automated meeting intelligence. Not just transcripts, but actionable summaries. Use it to manage dozens of clients without ever forgetting a single task or deadline from a Zoom call.', 
-    link: 'https://fireflies.ai', 
-    hasAffiliate: true, 
-    emoji: '🦗' 
-  },
-  { 
-    id: 'otter', 
-    name: 'Otter.ai', 
-    category: 'Productivity', 
-    description: 'Real-time transcription and collaborative note-taking for team calls. Essential for fast-paced startup environments and complex technical projects that need a running log of truth.', 
-    link: 'https://otter.ai', 
-    hasAffiliate: true, 
-    emoji: '🦦' 
-  },
-
-  // --- DEVELOPER TOOLS ---
+  // --- DEVELOPMENT ---
   { 
     id: 'cursor', 
     name: 'Cursor', 
     category: 'Dev', 
-    description: 'The coding "Alpha." Use natural language to build and edit full-scale apps. The best tool for non-coders to enter the SaaS market by describing their vision and letting the AI handle the syntax.', 
+    description: 'An AI-first code editor that knows your entire codebase. Like VS Code on steroids.', 
     link: 'https://cursor.com', 
     hasAffiliate: false, 
-    emoji: '💻' 
+    emoji: '💻',
+    content: `
+## The Developer's Secret Weapon 💻
+
+Cursor is a fork of VS Code that has AI built into the very core. It's the single most important tool for the "Solopreneur Coder" in 2026.
+
+### Why Cursor is Different:
+*   **Codebase Indexing:** It "reads" your entire project. You can ask "Where is the login logic?" and it will take you there.
+*   **Composer (Ctrl+I):** Describe a new feature, and Cursor will write the code across multiple files simultaneously.
+*   **Inline Edits:** highlight a block of code and press Ctrl+K to ask for an optimization or fix.
+
+### The Profit Path:
+*   **SaaS Development:** Ship features 5x faster than developers using standard editors.
+*   **Technical Consulting:** Use Cursor to quickly audit and fix codebases for clients.
+*   **Chrome Extension Builder:** The best tool for building and shipping browser extensions overnight.
+
+### Pro Alpha:
+Use the \`@Codebase\` tag in chat to ensure the AI has the full context of your project before it makes a suggestion. 🚀
+`
   },
   { 
     id: 'v0', 
     name: 'v0.dev', 
     category: 'Dev', 
-    description: 'Vercel’s AI for generating production-ready React UI code from prompts. Essential for landing-page hacks—build a top-tier visual interface in 5 minutes and skip the hours of manual CSS.', 
+    description: 'Next-generation UI generation from Vercel. Turn text into clean React code.', 
     link: 'https://v0.dev', 
     hasAffiliate: false, 
-    emoji: '⚡' 
-  },
-  { 
-    id: 'github-copilot', 
-    name: 'GitHub Copilot', 
-    category: 'Dev', 
-    description: 'The original AI assistant for developers. Features intelligent autofill and logical block suggestions. A must-have for accelerating your technical projects and maintaining coding flow state.', 
-    link: 'https://github.com/features/copilot', 
-    hasAffiliate: false, 
-    emoji: '🐙' 
-  },
-  { 
-    id: 'replit', 
-    name: 'Replit Agent', 
-    category: 'Dev', 
-    description: 'The end-to-end "Chat-to-Deployment" tool. Build and launch a functional web app solely through a chat interface. Best for testing MVP ideas fast without messing with servers or cloud config.', 
-    link: 'https://replit.com', 
-    hasAffiliate: false, 
-    emoji: '🌀' 
-  },
+    emoji: '⚡',
+    content: `
+## The Frontend Accelerator ⚡
 
-  // --- SOCIAL & VIRAL ---
-  { 
-    id: 'opus-clip', 
-    name: 'OpusClip', 
-    category: 'Video', 
-    description: 'The "Repurposing Goldmine." Turn 1 long YouTube video or podcast into 10 viral TikTok shorts with one click. Use it to feed the algorithms daily without ever filming new content.', 
-    link: 'https://opus.pro', 
-    hasAffiliate: true, 
-    emoji: '🎬' 
-  },
-  { 
-    id: 'submagic', 
-    name: 'Submagic', 
-    category: 'Video', 
-    description: 'Retention-first captioning. Features dynamic, high-energy text styles that keep eyes glued to the screen. Key for maximizing watch-time and going viral on Reels and TikTok.', 
-    link: 'https://submagic.co', 
-    hasAffiliate: true, 
-    emoji: '💬' 
-  },
-  { 
-    id: 'captions', 
-    name: 'Captions.ai', 
-    category: 'Video', 
-    description: 'Complete AI creator studio. Features teleprompter and eye-contact fix for perfect delivery. Use it to record high-converting ads that look professional even if you’re reading a script for the first time.', 
-    link: 'https://captions.ai', 
-    hasAffiliate: false, 
-    emoji: '📱' 
-  },
-  { 
-    id: 'mubert', 
-    name: 'Mubert', 
-    category: 'Audio', 
-    description: 'Custom, royalty-free generative music for content creators. No more copyright strikes—generate a unique vibe for every piece of content and keep your revenue safe from claims.', 
-    link: 'https://mubert.com', 
-    hasAffiliate: true, 
-    emoji: '🎧' 
-  },
+v0.dev, built by the Vercel team, is essentially "Midjourney for Web Interfaces." It uses high-quality React and Tailwind CSS to build your UI.
 
-  // --- DATA & DATA SCRAPING ---
-  { 
-    id: 'browse-ai', 
-    name: 'Browse AI', 
-    category: 'Automation', 
-    description: 'Extract and monitor data from any website without coding. Features "Robots" that track competitor prices and trending stocks. Use it for high-speed market research and price arbitrage hacks.', 
-    link: 'https://browse.ai', 
-    hasAffiliate: true, 
-    emoji: '🕸️' 
-  },
-  { 
-    id: 'instabase', 
-    name: 'Instabase', 
-    category: 'Automation', 
-    description: 'Turn unstructured PDF data and "messy" documents into clean spreadsheets. Essential for building complex business automation tools for high-value clients in real estate or finance.', 
-    link: 'https://instabase.com', 
-    hasAffiliate: false, 
-    emoji: '📑' 
-  },
+### Key Features:
+*   **Iterative Design:** Tell it "Make the buttons neon cyan" or "Add a sidebar," and it updates the code instantly.
+*   **Best Practices:** It uses Radix UI and Shadcn/UI patterns, meaning the code is production-ready.
+*   **Deployment Ready:** it integrates perfectly with the Vercel ecosystem.
+
+### The Money Play:
+*   **Landing Page Agency:** Charge $1k-$5k for landing pages that you build in an afternoon using v0 and some custom tweaks.
+*   **MVP Builder:** help founders launch their product's frontend in days, not months.
+*   **Design-to-Code:** upload a screenshot of a site you like, and v0 will recreate the components for you.
+
+### Pro Alpha:
+Don't just use the first generation. Click on specific elements to "Refine" them until the UI is pixel-perfect. 🚀
+`
+  }
 ];
 
 export const POSTS: Post[] = [
@@ -3502,6 +3466,109 @@ You are the first generation to have the "Gods of Logic" at your fingertips for 
 
 **What are you going to build?** 🚀
 `
+  },
+  {
+    id: 'fomo-1',
+    title: "MISSING OUT: The AI Wealth Gap is Widening",
+    date: "2026-05-18",
+    category: "FOMO",
+    emoji: "⏳",
+    excerpt: "If you aren't using AI by now, you aren't just behind—you're becoming irrelevant. Here is the harsh truth.",
+    author: "Z-Lord",
+    featuredImage: "https://images.unsplash.com/photo-1508247469910-539655304bc6?q=80&w=2000&auto=format&fit=crop",
+    content: `
+## The Harsh Reality of 2026 ⏳
+
+Wake up. The "AI is a fad" crowd is currently working 9-5s for companies that use AI to optimize their wages downward. The "Digital Divide" has become the "Intelligence Divide."
+
+### Don't Be a Statistic
+*   **Fact:** 40% of entry-level marketing jobs disappeared last year.
+*   **Fact:** One person using Claude can do the work of a 5-person agency.
+*   **Fact:** Salaries for "AI-Native" employees are 30% higher on average.
+
+### The Escape Plan
+You have exactly 6 months to integrate these tools into your workflow before you become a commodity. 
+1.  **Stop Doomscrolling:** Swap 30 mins of TikTok for 30 mins of [Tools Vault](/tools) experimentation.
+2.  **Build Publicly:** Show your AI workflows on X and LinkedIn. 
+3.  **Monetize Now:** Don't wait for a degree. Sell a solution.
+
+### This Is Your Warning
+The window for "Early Adopter Alpha" is closing. In 2027, this will just be "Standard Procedure." Start staking your claim today. 💀
+`
+  },
+  {
+    id: 'free-tools-1',
+    title: "0$ Budget? The Best 'Almost' Free AI Stack",
+    date: "2026-05-19",
+    category: "RESOURCES",
+    emoji: "🆓",
+    excerpt: "You don't need a $20/mo subscription to make it. Here are the best free and open-source alternatives.",
+    author: "AlphaDev",
+    featuredImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000&auto=format&fit=crop",
+    content: `
+## High Power, No Cost 🆓
+
+"I can't afford AI" is a mid-curve excuse. The best models in the world often have free tiers or open-source versions that are just as capable.
+
+### The Zero-Dollar Stack:
+1.  **LLM:** **Grok-2 (Free on X)** or **Claude 3.5 Sonnet (Free tier)**.
+2.  **Images:** **Flux.1 Schnell** inside **Fal.ai** (they give free credits to new users) or **Bing Image Creator**.
+3.  **Video:** **Luma Dream Machine** (30 free generations a month).
+4.  **Code:** **Cursor Free Tier** (includes 50 premium requests).
+
+### How to Scale:
+Start with these free tools to land your first $500 client. Then, and ONLY THEN, reinvest that profit into the pro versions. Stacking paper is about margin, not just revenue. 🚀
+`
+  },
+  {
+    id: 'how-to-deploy-1',
+    title: "Deploying Your First AI App: No-Code to Cloud",
+    date: "2026-05-21",
+    category: "GUIDE",
+    emoji: "🚀",
+    excerpt: "How to ship your vision and start collecting users without touching a Linux terminal.",
+    author: "AlphaDev",
+    featuredImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000&auto=format&fit=crop",
+    content: `
+## Shipping is the Only Metric 🚀
+
+Ideas are worthless. Deployment is everything. 
+
+### The Low-Friction Path:
+1.  **Build:** Use **Replit Agent** to build your app using pure English.
+2.  **Verify:** Test it on your local browser.
+3.  **Launch:** Click "Deploy" in Replit or use **Vercel** for a professional sub-domain. 
+4.  **Traffic:** Post it on Reddit r/startups and r/ProductHunt.
+
+### Pro Alpha:
+Use **Google AI Studio** to test your prompts for free before you integrate them into your code. It saves you money and time. 🚀
+`
+  },
+  {
+    id: 'trending-1',
+    title: "Why AI Agents are the New 10k/mo Business",
+    date: "2026-05-22",
+    category: "TRENDING",
+    emoji: "🕵️",
+    excerpt: "Chatbots are dead. Agents that actually 'do' the work are the new frontier of monetization.",
+    author: "Z-Lord",
+    featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000&auto=format&fit=crop",
+    content: `
+## The Agentic Shift 🕵️
+
+In 2024, we talked to AI. In 2026, we tell AI to **go work**. 
+
+### What is an Agent?
+An agent doesn't just write a list of tasks; it has the tools to complete them. It can search the web, book flights, and send invoices.
+
+### How to Monetize Agents:
+*   **Personal Shopping Agents:** Build a niche agent for find rare sneakers or luxury watches.
+*   **Reputation Management:** An agent that monitors social media mentions and responds based on your instructions.
+*   **AI Staffing Agency:** Sell "Digital Employees" to companies that need 24/7 lead qualification.
+
+### Pro Alpha:
+Learn to use **LangChain** or **CrewAI**. These frameworks allow you to link multiple AIs together to perform complex tasks. 🚀
+`
   }
-]
+];
 ;

@@ -28,4 +28,5 @@ export interface Tool {
   link: string;
   hasAffiliate: boolean;
   emoji: string;
+  content?: string;
 }

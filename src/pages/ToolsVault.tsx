@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Search, ExternalLink } from 'lucide-react';
+import { Search, ExternalLink, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { TOOLS } from '../constants.ts';
 import { Tool } from '../types.ts';
 
@@ -9,7 +10,7 @@ const ToolCard = ({ tool }: { tool: Tool }) => (
     layout
     initial={{ opacity: 0, scale: 0.95 }}
     animate={{ opacity: 1, scale: 1 }}
-    className="glass p-6 rounded-3xl group relative overflow-hidden border border-white/10 hover:border-neon-cyan/50 transition-all flex flex-col h-full"
+    className="glass p-6 rounded-3xl group relative overflow-hidden border border-white/10 hover:border-neon-cyan/50 transition-all flex flex-col h-full bg-dark-bg/20"
   >
     <div className="flex justify-between items-start mb-4">
       <div className="text-4xl group-hover:scale-125 transition-transform duration-500">{tool.emoji}</div>
@@ -19,15 +20,25 @@ const ToolCard = ({ tool }: { tool: Tool }) => (
     </div>
     <span className="text-neon-cyan font-bold text-[10px] uppercase tracking-[0.2em] mb-2 block">{tool.category}</span>
     <h3 className="text-xl font-heading font-bold mb-3 group-hover:text-neon-cyan transition-colors text-white">{tool.name}</h3>
-    <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">{tool.description}</p>
-    <a 
-      href={tool.link} 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 text-white font-black text-xs uppercase tracking-widest hover:text-neon-cyan transition-all mt-auto no-underline"
-    >
-      Access Tool <ExternalLink size={14} />
-    </a>
+    <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed line-clamp-2">{tool.description}</p>
+    
+    <div className="flex items-center justify-between gap-4 mt-auto">
+      <Link 
+        to={`/tools/${tool.id}`}
+        className="flex-grow flex items-center justify-center gap-2 bg-white/5 group-hover:bg-neon-cyan/10 text-white group-hover:text-neon-cyan py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all no-underline border border-white/5 group-hover:border-neon-cyan/30"
+      >
+        Read Alpha <ArrowRight size={12} />
+      </Link>
+      <a 
+        href={tool.link} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="w-12 h-10 flex items-center justify-center glass rounded-xl text-gray-500 hover:text-neon-cyan hover:border-neon-cyan transition-all"
+        title="Direct Access"
+      >
+        <ExternalLink size={16} />
+      </a>
+    </div>
     
     <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-neon-cyan/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
   </motion.div>

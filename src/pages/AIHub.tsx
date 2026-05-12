@@ -117,19 +117,19 @@ export const AIHub = () => {
   };
 
   return (
-    <main className="pt-20 md:pt-24 px-4 md:px-6 pb-4 md:pb-6 w-full max-w-[1800px] mx-auto h-[calc(100dvh-0px)] md:h-[calc(100vh-20px)] flex flex-col overflow-hidden">
-      <div className="mb-2 md:mb-4 shrink-0 md:px-4">
+    <main className="pt-20 md:pt-24 px-2 md:px-4 pb-2 md:pb-4 w-full mx-auto h-[100dvh] md:h-screen flex flex-col overflow-hidden">
+      <div className="mb-2 shrink-0 md:px-4">
         <h1 className="text-2xl md:text-5xl font-heading font-black uppercase tracking-tighter text-white">
           AI <span className="neon-text">Command</span> Center 🛸
         </h1>
-        <p className="text-gray-400 max-w-3xl font-body text-[10px] md:text-xs">
+        <p className="text-gray-400 font-body text-[10px] md:text-xs">
           The ultimate suite of Google Gemini tools live on your dashboard.
         </p>
       </div>
 
-      <div className="flex-grow flex flex-col md:flex-row gap-4 md:gap-6 h-full overflow-hidden min-h-0">
+      <div className="flex-grow flex flex-col md:flex-row gap-2 md:gap-4 h-full overflow-hidden min-h-0">
         {/* Sidebar Tabs */}
-        <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto scrollbar-hide shrink-0 pb-2 md:pb-0">
+        <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto scrollbar-hide shrink-0 pb-1 md:pb-0 md:w-48 lg:w-64">
           {TAB_CONFIG.map(tab => (
             <button
               key={tab.id}
@@ -171,7 +171,7 @@ export const AIHub = () => {
                 <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-lg ${msg.role === 'user' ? 'bg-neon-pink text-white' : 'bg-neon-cyan text-dark-bg'}`}>
                   {msg.role === 'user' ? <User size={20} /> : <Sparkles size={20} />}
                 </div>
-                <div className={`p-4 rounded-2xl max-w-[80%] ${msg.role === 'user' ? 'bg-white/10 text-white font-medium' : 'bg-dark-bg/60 text-gray-100 border border-white/5 shadow-inner'}`}>
+                <div className={`p-4 rounded-2xl max-w-[90%] md:max-w-[75%] ${msg.role === 'user' ? 'bg-white/10 text-white font-medium' : 'bg-dark-bg/60 text-gray-100 border border-white/5 shadow-inner'}`}>
                   <p className="text-sm md:text-base leading-relaxed whitespace-pre-wrap">{msg.text}</p>
                 </div>
               </motion.div>
