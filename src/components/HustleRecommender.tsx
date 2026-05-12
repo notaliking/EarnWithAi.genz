@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Send, Loader2, RefreshCcw } from 'lucide-react';
-import { GoogleGenerativeAI } from '@google/generative-ai';
-
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || '');
+import Markdown from 'react-markdown';
 
 export const HustleRecommender = () => {
   const [input, setInput] = useState('');
@@ -17,21 +15,20 @@ export const HustleRecommender = () => {
     setLoading(true);
     setError(null);
     try {
-      const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
-      const prompt = `You are a Gen-Z high-growth side hustle expert. 
-      The user says: "${input}". 
-      Based on this, suggest one highly specific, actionable AI-powered side hustle. 
-      Use Gen-Z slang like "no cap", "alpha", "printing", "stacking".
-      Markdown format: 
-      ### [Hustle Name] [Emoji]
-      **The Alpha:** [Why it works now]
-      **The Stack:** [2-3 specific AI tools to use]
-      **Action Plan:** [3 bullet points to start today]
-      Keep it short and punchy.`;
+      const response = await fetch('/api/recommend', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ input }),
+      });
 
-      const result = await model.generateContent(prompt);
-      const response = await result.response;
-      setRecommendation(response.text());
+      if (!response.ok) {
+        throw new Error('Failed to get recommendation');
+      }
+
+      const data = await response.json();
+      setRecommendation(data.text);
     } catch (err) {
       console.error(err);
       setError('The AI oracle is offline. Try again later, fam.');
@@ -94,7 +91,7 @@ export const HustleRecommender = () => {
               >
                 <div className="prose prose-invert max-w-none prose-headings:font-heading prose-headings:uppercase prose-headings:tracking-tighter prose-h3:text-3xl prose-h3:text-neon-cyan prose-strong:text-white prose-p:text-gray-400">
                   <div className="markdown-body p-8 rounded-3xl bg-white/5 border border-white/10">
-                    <div dangerouslySetInnerHTML={{ __html: recommendation.replace(/\n/g, '<br />') }} />
+                    <Markdown>{recommendation}</Markdown>
                   </div>
                 </div>
                 
