@@ -8,6 +8,7 @@ import { ToolsVault } from './pages/ToolsVault.tsx';
 import { Article } from './pages/Article.tsx';
 import { Blog } from './pages/Blog.tsx';
 import { About } from './pages/About.tsx';
+import { AILab } from './pages/AILab.tsx';
 
 /**
  * @license
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<About />} />
           <Route path="/tools" element={<ToolsVault />} />
+          <Route path="/lab" element={<AILab />} />
           <Route path="/blog/:id" element={<Article />} />
         </Routes>
       </AnimatePresence>
